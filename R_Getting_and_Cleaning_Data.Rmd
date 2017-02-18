@@ -125,11 +125,13 @@ teams
 
 
 ```{r}
-fileURL <- "https://www.yelp.com/search?cflt=restaurants&find_loc=Los+Angeles%2C+CA"
-doc <- htmlTreeParse(fileURL, useInternalNodes =TRUE)
-scores <- xpathSApply(doc, "//*[@id='super-container']",xmlValue)
+a <- "http://sports.yahoo.com/nfl/scoreboard/"
+b <- htmlTreeParse(fileURL, useInternalNodes =TRUE)
+scores <- xpathSApply(doc, "//li[@id='scoreboard-group-2']",class="score")
 scores
 ```
+
+//*[@id="scoreboard-group-2"]/div/ul/li[1]/div/a/div/div[2]/div[1]/ul/li[2]/div[2]/div/span[1]
 
 ## Reading in JSON
 
