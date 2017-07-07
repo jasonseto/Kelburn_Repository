@@ -20,7 +20,7 @@ This notebook was created to work through the examples and problems for getting 
 
 ##Reading XML
 
-<!-- install.packages("XML") -->
+install.packages("XML")
 
 ```{r}
 library(XML)

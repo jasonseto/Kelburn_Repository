@@ -287,7 +287,7 @@ div.tocify {
 <h1>Week 1</h1>
 <div id="reading-xml" class="section level2">
 <h2>Reading XML</h2>
-<!-- install.packages("XML") -->
+<p>install.packages(“XML”)</p>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxubGlicmFyeShYTUwpXG5cbmBgYCJ9 -->
@@ -308,12 +308,12 @@ div.tocify {
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueG1sTmFtZShyb290Tm9kZSlcblxuYGBgIn0= -->
-<pre class="r"><code>xmlName(rootNode)
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm9vdE5vZGUgPC0geG1sUm9vdChkb2MpXG5cbmBgYCJ9 -->
+<pre class="r"><code>rootNode &lt;- xmlRoot(doc)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiYnJlYWtmYXN0X21lbnVcIlxuIn0= -->
-<pre><code>[1] &quot;breakfast_menu&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4geG1sUm9vdChkb2MpIDogb2JqZWN0ICdkb2MnIG5vdCBmb3VuZFxuIn0= -->
+<pre><code>Error in xmlRoot(doc) : object 'doc' not found</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -324,9 +324,8 @@ div.tocify {
 <pre class="r"><code>names(rootNode)
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICBmb29kICAgZm9vZCAgIGZvb2QgICBmb29kICAgZm9vZCBcblwiZm9vZFwiIFwiZm9vZFwiIFwiZm9vZFwiIFwiZm9vZFwiIFwiZm9vZFwiIFxuIn0= -->
-<pre><code>  food   food   food   food   food 
-&quot;food&quot; &quot;food&quot; &quot;food&quot; &quot;food&quot; &quot;food&quot; </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IG9iamVjdCAncm9vdE5vZGUnIG5vdCBmb3VuZFxuIn0= -->
+<pre><code>Error: object 'rootNode' not found</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -339,13 +338,8 @@ div.tocify {
 <pre class="r"><code>rootNode[[1]]
 </code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiPGZvb2Q+XG4gIDxuYW1lPkJlbGdpYW4gV2FmZmxlczwvbmFtZT5cbiAgPHByaWNlPiQ1Ljk1PC9wcmljZT5cbiAgPGRlc2NyaXB0aW9uPlR3byBvZiBvdXIgZmFtb3VzIEJlbGdpYW4gV2FmZmxlcyB3aXRoIHBsZW50eSBvZiByZWFsIG1hcGxlIHN5cnVwPC9kZXNjcmlwdGlvbj5cbiAgPGNhbG9yaWVzPjY1MDwvY2Fsb3JpZXM+XG48L2Zvb2Q+IFxuIn0= -->
-<pre><code>&lt;food&gt;
-  &lt;name&gt;Belgian Waffles&lt;/name&gt;
-  &lt;price&gt;$5.95&lt;/price&gt;
-  &lt;description&gt;Two of our famous Belgian Waffles with plenty of real maple syrup&lt;/description&gt;
-  &lt;calories&gt;650&lt;/calories&gt;
-&lt;/food&gt; </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IG9iamVjdCAncm9vdE5vZGUnIG5vdCBmb3VuZFxuIn0= -->
+<pre><code>Error: object 'rootNode' not found</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -355,6 +349,9 @@ div.tocify {
 <!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucm9vdE5vZGVbWzFdXVtbMV1dXG5gYGAifQ== -->
 <pre class="r"><code>rootNode[[1]][[1]]</code></pre>
 <!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3I6IG9iamVjdCAncm9vdE5vZGUnIG5vdCBmb3VuZFxuIn0= -->
+<pre><code>Error: object 'rootNode' not found</code></pre>
+<!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 </div>
@@ -362,21 +359,11 @@ div.tocify {
 <h3>Programatically extract various parts of the xml</h3>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueG1sU0FwcGx5KHJvb3ROb2RlLCB4bWxWYWx1ZSlcblxuYGBgIn0= -->
-<pre class="r"><code>xmlSApply(rootNode, xmlValue)
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueG1sU0FwcGx5KHJvb3ROb2RlLCB4bWxWYWx1ZSlcbmBgYCJ9 -->
+<pre class="r"><code>xmlSApply(rootNode, xmlValue)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBmb29kIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgXCJCZWxnaWFuIFdhZmZsZXMkNS45NVR3byBvZiBvdXIgZmFtb3VzIEJlbGdpYW4gV2FmZmxlcyB3aXRoIHBsZW50eSBvZiByZWFsIG1hcGxlIHN5cnVwNjUwXCIgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvb2QgXG4gICAgICAgICAgICAgICAgICAgXCJTdHJhd2JlcnJ5IEJlbGdpYW4gV2FmZmxlcyQ3Ljk1TGlnaHQgQmVsZ2lhbiB3YWZmbGVzIGNvdmVyZWQgd2l0aCBzdHJhd2JlcnJpZXMgYW5kIHdoaXBwZWQgY3JlYW05MDBcIiBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZm9vZCBcblwiQmVycnktQmVycnkgQmVsZ2lhbiBXYWZmbGVzJDguOTVMaWdodCBCZWxnaWFuIHdhZmZsZXMgY292ZXJlZCB3aXRoIGFuIGFzc29ydG1lbnQgb2YgZnJlc2ggYmVycmllcyBhbmQgd2hpcHBlZCBjcmVhbTkwMFwiIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBmb29kIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBcIkZyZW5jaCBUb2FzdCQ0LjUwVGhpY2sgc2xpY2VzIG1hZGUgZnJvbSBvdXIgaG9tZW1hZGUgc291cmRvdWdoIGJyZWFkNjAwXCIgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGZvb2QgXG4gICAgICAgICAgICAgICAgICAgICAgICBcIkhvbWVzdHlsZSBCcmVha2Zhc3QkNi45NVR3byBlZ2dzLCBiYWNvbiBvciBzYXVzYWdlLCB0b2FzdCwgYW5kIG91ciBldmVyLXBvcHVsYXIgaGFzaCBicm93bnM5NTBcIiBcbiJ9 -->
-<pre><code>                                                                                                                    food 
-                              &quot;Belgian Waffles$5.95Two of our famous Belgian Waffles with plenty of real maple syrup650&quot; 
-                                                                                                                    food 
-                   &quot;Strawberry Belgian Waffles$7.95Light Belgian waffles covered with strawberries and whipped cream900&quot; 
-                                                                                                                    food 
-&quot;Berry-Berry Belgian Waffles$8.95Light Belgian waffles covered with an assortment of fresh berries and whipped cream900&quot; 
-                                                                                                                    food 
-                                               &quot;French Toast$4.50Thick slices made from our homemade sourdough bread600&quot; 
-                                                                                                                    food 
-                        &quot;Homestyle Breakfast$6.95Two eggs, bacon or sausage, toast, and our ever-popular hash browns950&quot; </code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiRXJyb3IgaW4geG1sU0FwcGx5KHJvb3ROb2RlLCB4bWxWYWx1ZSkgOiBvYmplY3QgJ3Jvb3ROb2RlJyBub3QgZm91bmRcbiJ9 -->
+<pre><code>Error in xmlSApply(rootNode, xmlValue) : object 'rootNode' not found</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
@@ -465,9 +452,18 @@ div.tocify {
 </ol>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
-<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVhbXNcblxuYGBgIn0= -->
-<pre class="r"><code>teams
-</code></pre>
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZmlsZVVybCA8LSBcImh0dHA6Ly9lc3BuLmdvLmNvbS9uZmwvdGVhbS9fL25hbWUvYmFsL2JhbHRpbW9yZS1yYXZlbnNcIlxuZG9jIDwtIGh0bWxUcmVlUGFyc2UoZmlsZVVybCwgdXNlSW50ZXJuYWwgPSBUUlVFKVxuc2NvcmVzIDwtIHhwYXRoU0FwcGx5KGRvYywgXCIvL2xpW0BjbGFzcz0nc2NvcmUnXVwiLCB4bWxWYWx1ZSlcbnRlYW1zIDwtIHhwYXRoU0FwcGx5KGRvYywgXCIvL2xpW0BjbGFzcz0ndGVhbS1uYW1lJ11cIiwgeG1sVmFsdWUpXG5zY29yZXNcbmBgYCJ9 -->
+<pre class="r"><code>fileUrl &lt;- &quot;http://espn.go.com/nfl/team/_/name/bal/baltimore-ravens&quot;
+doc &lt;- htmlTreeParse(fileUrl, useInternal = TRUE)
+scores &lt;- xpathSApply(doc, &quot;//li[@class='score']&quot;, xmlValue)
+teams &lt;- xpathSApply(doc, &quot;//li[@class='team-name']&quot;, xmlValue)
+scores</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoibGlzdCgpXG4ifQ== -->
+<pre><code>list()</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGVhbXNcbmBgYCJ9 -->
+<pre class="r"><code>teams</code></pre>
 <!-- rnb-source-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiQmFsdGltb3JlIFJhdmVuc1JhdmVuc1wiIFwiQmFsdGltb3JlIFJhdmVuc1JhdmVuc1wiXG4ifQ== -->
 <pre><code>[1] &quot;Baltimore RavensRavens&quot; &quot;Baltimore RavensRavens&quot;</code></pre>
@@ -513,7 +509,7 @@ scores
 </div>
 </div>
 
-<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2sgLSBHZXR0aW5nIGFuZCBDbGVhbmluZyBEYXRhIg0Kb3V0cHV0OiANCiAgaHRtbF9ub3RlYm9vazoNCiAgICB0b2M6IFRSVUUNCiAgICB0b2NfZmxvYXQ6IFRSVUUNCiAgICB0aGVtZTogdW5pdGVkDQphdXRob3I6IEphc29uIFNldG8NCg0KLS0tDQpUaGlzIG5vdGVib29rIHdhcyBjcmVhdGVkIHRvIHdvcmsgdGhyb3VnaCB0aGUgZXhhbXBsZXMgYW5kIHByb2JsZW1zIGZvciBnZXR0aW5nIGFuZCBjbGVhbmluZyBkYXRhDQoNCiNXZWVrDQojI0xlc3Nvbg0KIyMjU2xpZGUNCg0KLS0tDQoNCiNXZWVrIDENCg0KIyNSZWFkaW5nIFhNTA0KDQo8IS0tIGluc3RhbGwucGFja2FnZXMoIlhNTCIpIC0tPg0KDQpgYGB7cn0NCmxpYnJhcnkoWE1MKQ0KYGBgDQoNCllvdSBjYW4gcHVsbCBYTUwgdXNpbmcgdGhlIFhNTCBwYWNrYWdlIGluIFIuIFRoZSBjb2RlIGJlbG93IGFjY2Vzc2VzIHRoZSB3M3NjaG9vbHMgc2l0ZSBhbmQgcHVsbHMgdGhlIGJyZWFrZmFzdCBub2RlIGZyb20gdGhlIFhNTA0KDQoxLiBMb2FkIHRoZSBwYWNrYWdlDQoyLiBHaXZlIGl0IGEgVVJMDQozLiBMb2FkIGl0IGludG8gUiBNZW1vcnkNCjQuIFJvb3Rub2RlIC0tIHRoZSB3cmFwcGVyIGVsZW1lbnQgZm9yIHRoZSBlbnRpcmUgZG9jdW1lbnQNCg0KYGBge3J9DQpmaWxldXJsIDwtICJodHRwOi8vd3d3Lnczc2Nob29scy5jb20veG1sL3NpbXBsZS54bWwiDQpkb2MgPC0geG1sVHJlZVBhcnNlKGZpbGV1cmwsdXNlSW50ZXJuYWw9VFJVRSkNCnJvb3ROb2RlIDwtIHhtbFJvb3QoZG9jKQ0KeG1sTmFtZShyb290Tm9kZSkNCmBgYA0KDQpUaGlzIHRlbGxzIHVzIHRoYXQgd2UgZ2V0IGZpdmUgZGlmZmVyZW50IG5hbWVzIGluIHRoZSByb290bm90ZSAoYWxsIHJlbGF0ZWQgdG8gZm9vZCkNCmBgYHtyfQ0KbmFtZXMocm9vdE5vZGUpDQpgYGANCg0KIyMjRGlyZWN0bHkgYWNjZXNzIHBhcnRzIG9mIHRoZSBYTUwNCg0KSWYgSSB3YW50IHRvIHB1bGwgdGhlIGZpcnN0IGZvb2QgZWxlbWVudA0KDQpgYGB7cn0NCnJvb3ROb2RlW1sxXV0NCmBgYA0KDQpOb3cgaWYgSSB3YW50IHRvIGtlZXAgZHJpbGxpbmcgZG93biwgeW91IGNhbiBqdXN0IHN1YnNldCBieSBhZGRpbmcgYW4gYWRkaXRpb25hbCBlbGVtZW50IChpbiB0aGlzIGNhc2UgMSkNCg0KYGBge3J9DQpyb290Tm9kZVtbMV1dW1sxXV0NCmBgYA0KDQojIyNQcm9ncmFtYXRpY2FsbHkgZXh0cmFjdCB2YXJpb3VzIHBhcnRzIG9mIHRoZSB4bWwNCg0KYGBge3IgdGlkeT1UUlVFfSANCnhtbFNBcHBseShyb290Tm9kZSx4bWxWYWx1ZSkNCmBgYA0KDQojIyNYUGF0aA0KDQpJZiB5b3Ugd2FudCB0byBleHRyYWN0IHNvbWUgb2YgdGhlIFhNTCBkb2N1bWVudCB5b3UgY2FuIHVzZSB0aGUgWFBhdGggbGFuZ3VhZ2UNCg0KTGluazogd3d3LnN0YXQuYmVya2VsZXkuZWR1L35zdGF0Y3VyL1dvcmtzaG9wMi9QcmVzZW50YXRpb25zL1hNTC5wZGYNCg0KU29tZSBiYXNpYyBjb21tYW5kczoNCg0KWFBhdGggICAgICAgICAgICAgICAgICAgRGVzY3JpcHRpb24NCi0tLS0tLS0tLS0tLSAgICAgICAgICAgIC0tLS0tLS0tLS0tLQ0KL25vZGUgICAgICAgICAgICAgICAgICAgVG9wIExldmVsIE5vZGUNCi8vbm9kZSAgICAgICAgICAgICAgICAgIE5vZGUgYXQgYW55IGxldmVsDQpub2RlW0BhdHRyX25hbWVdICAgICAgICBOb2RlIHdpdGggYW55IGF0dHJpYnV0ZSBuYW1lDQpub2RlW0BhdHRyLW5hbWU9J2JvYiddICBOb2RlIHdpdGggYXR0cmlidXRlIG5hbWUgYXR0ci1uYW1lID0gYm9iDQoNCg0KIyMjR2V0IEl0ZW1zIGFuZCBtZW51IHByaWNlcw0KDQpUaGUgeHBhdGhTQXBwbHkgY29tbWFuZCBwdWxscyBmcm9tOg0KDQoqIHJvb3Rub2RlIC0gVGhlIHdob2xlIFhNTA0KKiAvL25hbWUgICAtIHdoaWNoIGlzIHRoZSBub2RlIHdpdGggdGhlICJOYW1lIiBoZWFkZXINCiogeG1sdmFsdWUgLSB0aGUgdHlwZSBvZiBkYXRhIHlvdSBhcmUgcHVsbGluZw0KDQpgYGB7cn0NCnhwYXRoU0FwcGx5KHJvb3ROb2RlLCIvL25hbWUiLCB4bWxWYWx1ZSkNCmBgYA0KDQpOb3cgdHJ5IHRoZSBzYW1lIHRoaW5nIGZvciBwcmljZQ0KDQpgYGB7cn0NCnhwYXRoU0FwcGx5KHJvb3ROb2RlLCIvL3ByaWNlIiwgeG1sVmFsdWUpDQpgYGANCg0KIyMjRVNQTiBQYWdlDQoNCmh0dHA6Ly93d3cuZXNwbi5jb20vbmZsL3RlYW0vXy9uYW1lL2JhbC9iYWx0aW1vcmUtcmF2ZW5zDQoNCjEuIFJpZ2h0IGNsaWNrIG9uIHBhZ2UNCjIuIFZpZXcgU291cmNlDQozLiBJdCdzIGFuIGV4dGVuc2l2ZSBIVE1MDQoNCiogVHJ5aW5nIHRvIHB1bGwgc2NvcmVzIGFnYWluc3QgZGlmZmVyZW50IHRlYW1zDQoNCjEuIExvYWQgVVJMDQoyLiBQYXJzZSBhcyBIVE1MIChub3RlIHRoYXQgaXQncyBzbGlnaHRseSBkaWZmZXJlbnQgZnJvbSBYTUwgYW5kIHlvdSBjYW4gc2VlIEhUTUwgYXQgdGhlIHRvcCkNCjMuIFVzZSB0aGUgeFBhdGhTQXBwbHkgdG8gcHVsbCBvdXQgDQoNCmBgYHtyfQ0KZmlsZVVybCA8LSAiaHR0cDovL2VzcG4uZ28uY29tL25mbC90ZWFtL18vbmFtZS9iYWwvYmFsdGltb3JlLXJhdmVucyINCmRvYyA8LSBodG1sVHJlZVBhcnNlKGZpbGVVcmwsIHVzZUludGVybmFsID0gVFJVRSkNCnNjb3JlcyA8LSB4cGF0aFNBcHBseShkb2MsICIvL2xpW0BjbGFzcz0nc2NvcmUnXSIsIHhtbFZhbHVlKQ0KdGVhbXMgPC0geHBhdGhTQXBwbHkoZG9jLCAiLy9saVtAY2xhc3M9J3RlYW0tbmFtZSddIiwgeG1sVmFsdWUpDQoNCnNjb3Jlcw0KdGVhbXMNCmBgYA0KDQoNCmBgYHtyfQ0KYSA8LSAiaHR0cDovL3Nwb3J0cy55YWhvby5jb20vbmZsL3Njb3JlYm9hcmQvIg0KYiA8LSBodG1sVHJlZVBhcnNlKGZpbGVVUkwsIHVzZUludGVybmFsTm9kZXMgPVRSVUUpDQpzY29yZXMgPC0geHBhdGhTQXBwbHkoZG9jLCAiLy9saVtAaWQ9J3Njb3JlYm9hcmQtZ3JvdXAtMiddIixjbGFzcz0ic2NvcmUiKQ0Kc2NvcmVzDQpgYGANCg0KLy8qW0BpZD0ic2NvcmVib2FyZC1ncm91cC0yIl0vZGl2L3VsL2xpWzFdL2Rpdi9hL2Rpdi9kaXZbMl0vZGl2WzFdL3VsL2xpWzJdL2RpdlsyXS9kaXYvc3BhblsxXQ0KDQojIyBSZWFkaW5nIGluIEpTT04NCg0KSmF2YXNjcmlwdCBPYmplY3QgTm90YXRpb24NCg0KKiBMaWdodHdlaWdodCBkYXRhIHN0b3JhZ2UgbGFuZ3VhZ2UNCiogRGF0YSBzdG9yZWQgYXMgbnVtYmVycywgc3RyaW5ncywgYm9vbGVhbnMsIGFuZCBvYmplY3RzDQoNCmh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMvanRsZWVrL3JlcG9zDQoNCg0KIyMjIEpzb25MaXRlDQppbnN0YWxsLnBhY2thZ2VzKCJodHRyIikNCmxpYnJhcnkoaHR0cikNCnNldF9jb25maWcoY29uZmlnKHNzbF92ZXJpZnlwZWVyID0gMEwpKQ0KDQpgYGB7cn0NCmxpYnJhcnkoanNvbmxpdGUpDQpgYGANCg0KanNvbkRhdGEgPC0gZnJvbUpTT04oImh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMvanRsZWVrL3JlcG9zIikNCm5hbWVzKGpzb25EYXRhKQ0K</div>
+<div id="rmd-source-code">LS0tDQp0aXRsZTogIlIgTm90ZWJvb2sgLSBHZXR0aW5nIGFuZCBDbGVhbmluZyBEYXRhIg0Kb3V0cHV0OiANCiAgaHRtbF9ub3RlYm9vazoNCiAgICB0b2M6IFRSVUUNCiAgICB0b2NfZmxvYXQ6IFRSVUUNCiAgICB0aGVtZTogdW5pdGVkDQphdXRob3I6IEphc29uIFNldG8NCg0KLS0tDQpUaGlzIG5vdGVib29rIHdhcyBjcmVhdGVkIHRvIHdvcmsgdGhyb3VnaCB0aGUgZXhhbXBsZXMgYW5kIHByb2JsZW1zIGZvciBnZXR0aW5nIGFuZCBjbGVhbmluZyBkYXRhDQoNCiNXZWVrDQojI0xlc3Nvbg0KIyMjU2xpZGUNCg0KLS0tDQoNCiNXZWVrIDENCg0KIyNSZWFkaW5nIFhNTA0KDQppbnN0YWxsLnBhY2thZ2VzKCJYTUwiKQ0KDQpgYGB7cn0NCmxpYnJhcnkoWE1MKQ0KYGBgDQoNCllvdSBjYW4gcHVsbCBYTUwgdXNpbmcgdGhlIFhNTCBwYWNrYWdlIGluIFIuIFRoZSBjb2RlIGJlbG93IGFjY2Vzc2VzIHRoZSB3M3NjaG9vbHMgc2l0ZSBhbmQgcHVsbHMgdGhlIGJyZWFrZmFzdCBub2RlIGZyb20gdGhlIFhNTA0KDQoxLiBMb2FkIHRoZSBwYWNrYWdlDQoyLiBHaXZlIGl0IGEgVVJMDQozLiBMb2FkIGl0IGludG8gUiBNZW1vcnkNCjQuIFJvb3Rub2RlIC0tIHRoZSB3cmFwcGVyIGVsZW1lbnQgZm9yIHRoZSBlbnRpcmUgZG9jdW1lbnQNCg0KYGBge3J9DQpmaWxldXJsIDwtICJodHRwOi8vd3d3Lnczc2Nob29scy5jb20veG1sL3NpbXBsZS54bWwiDQpkb2MgPC0geG1sVHJlZVBhcnNlKGZpbGV1cmwsdXNlSW50ZXJuYWw9VFJVRSkNCnJvb3ROb2RlIDwtIHhtbFJvb3QoZG9jKQ0KeG1sTmFtZShyb290Tm9kZSkNCmBgYA0KDQpUaGlzIHRlbGxzIHVzIHRoYXQgd2UgZ2V0IGZpdmUgZGlmZmVyZW50IG5hbWVzIGluIHRoZSByb290bm90ZSAoYWxsIHJlbGF0ZWQgdG8gZm9vZCkNCmBgYHtyfQ0KbmFtZXMocm9vdE5vZGUpDQpgYGANCg0KIyMjRGlyZWN0bHkgYWNjZXNzIHBhcnRzIG9mIHRoZSBYTUwNCg0KSWYgSSB3YW50IHRvIHB1bGwgdGhlIGZpcnN0IGZvb2QgZWxlbWVudA0KDQpgYGB7cn0NCnJvb3ROb2RlW1sxXV0NCmBgYA0KDQpOb3cgaWYgSSB3YW50IHRvIGtlZXAgZHJpbGxpbmcgZG93biwgeW91IGNhbiBqdXN0IHN1YnNldCBieSBhZGRpbmcgYW4gYWRkaXRpb25hbCBlbGVtZW50IChpbiB0aGlzIGNhc2UgMSkNCg0KYGBge3J9DQpyb290Tm9kZVtbMV1dW1sxXV0NCmBgYA0KDQojIyNQcm9ncmFtYXRpY2FsbHkgZXh0cmFjdCB2YXJpb3VzIHBhcnRzIG9mIHRoZSB4bWwNCg0KYGBge3IgdGlkeT1UUlVFfSANCnhtbFNBcHBseShyb290Tm9kZSx4bWxWYWx1ZSkNCmBgYA0KDQojIyNYUGF0aA0KDQpJZiB5b3Ugd2FudCB0byBleHRyYWN0IHNvbWUgb2YgdGhlIFhNTCBkb2N1bWVudCB5b3UgY2FuIHVzZSB0aGUgWFBhdGggbGFuZ3VhZ2UNCg0KTGluazogd3d3LnN0YXQuYmVya2VsZXkuZWR1L35zdGF0Y3VyL1dvcmtzaG9wMi9QcmVzZW50YXRpb25zL1hNTC5wZGYNCg0KU29tZSBiYXNpYyBjb21tYW5kczoNCg0KWFBhdGggICAgICAgICAgICAgICAgICAgRGVzY3JpcHRpb24NCi0tLS0tLS0tLS0tLSAgICAgICAgICAgIC0tLS0tLS0tLS0tLQ0KL25vZGUgICAgICAgICAgICAgICAgICAgVG9wIExldmVsIE5vZGUNCi8vbm9kZSAgICAgICAgICAgICAgICAgIE5vZGUgYXQgYW55IGxldmVsDQpub2RlW0BhdHRyX25hbWVdICAgICAgICBOb2RlIHdpdGggYW55IGF0dHJpYnV0ZSBuYW1lDQpub2RlW0BhdHRyLW5hbWU9J2JvYiddICBOb2RlIHdpdGggYXR0cmlidXRlIG5hbWUgYXR0ci1uYW1lID0gYm9iDQoNCg0KIyMjR2V0IEl0ZW1zIGFuZCBtZW51IHByaWNlcw0KDQpUaGUgeHBhdGhTQXBwbHkgY29tbWFuZCBwdWxscyBmcm9tOg0KDQoqIHJvb3Rub2RlIC0gVGhlIHdob2xlIFhNTA0KKiAvL25hbWUgICAtIHdoaWNoIGlzIHRoZSBub2RlIHdpdGggdGhlICJOYW1lIiBoZWFkZXINCiogeG1sdmFsdWUgLSB0aGUgdHlwZSBvZiBkYXRhIHlvdSBhcmUgcHVsbGluZw0KDQpgYGB7cn0NCnhwYXRoU0FwcGx5KHJvb3ROb2RlLCIvL25hbWUiLCB4bWxWYWx1ZSkNCmBgYA0KDQpOb3cgdHJ5IHRoZSBzYW1lIHRoaW5nIGZvciBwcmljZQ0KDQpgYGB7cn0NCnhwYXRoU0FwcGx5KHJvb3ROb2RlLCIvL3ByaWNlIiwgeG1sVmFsdWUpDQpgYGANCg0KIyMjRVNQTiBQYWdlDQoNCmh0dHA6Ly93d3cuZXNwbi5jb20vbmZsL3RlYW0vXy9uYW1lL2JhbC9iYWx0aW1vcmUtcmF2ZW5zDQoNCjEuIFJpZ2h0IGNsaWNrIG9uIHBhZ2UNCjIuIFZpZXcgU291cmNlDQozLiBJdCdzIGFuIGV4dGVuc2l2ZSBIVE1MDQoNCiogVHJ5aW5nIHRvIHB1bGwgc2NvcmVzIGFnYWluc3QgZGlmZmVyZW50IHRlYW1zDQoNCjEuIExvYWQgVVJMDQoyLiBQYXJzZSBhcyBIVE1MIChub3RlIHRoYXQgaXQncyBzbGlnaHRseSBkaWZmZXJlbnQgZnJvbSBYTUwgYW5kIHlvdSBjYW4gc2VlIEhUTUwgYXQgdGhlIHRvcCkNCjMuIFVzZSB0aGUgeFBhdGhTQXBwbHkgdG8gcHVsbCBvdXQgDQoNCmBgYHtyfQ0KZmlsZVVybCA8LSAiaHR0cDovL2VzcG4uZ28uY29tL25mbC90ZWFtL18vbmFtZS9iYWwvYmFsdGltb3JlLXJhdmVucyINCmRvYyA8LSBodG1sVHJlZVBhcnNlKGZpbGVVcmwsIHVzZUludGVybmFsID0gVFJVRSkNCnNjb3JlcyA8LSB4cGF0aFNBcHBseShkb2MsICIvL2xpW0BjbGFzcz0nc2NvcmUnXSIsIHhtbFZhbHVlKQ0KdGVhbXMgPC0geHBhdGhTQXBwbHkoZG9jLCAiLy9saVtAY2xhc3M9J3RlYW0tbmFtZSddIiwgeG1sVmFsdWUpDQoNCnNjb3Jlcw0KdGVhbXMNCmBgYA0KDQoNCmBgYHtyfQ0KYSA8LSAiaHR0cDovL3Nwb3J0cy55YWhvby5jb20vbmZsL3Njb3JlYm9hcmQvIg0KYiA8LSBodG1sVHJlZVBhcnNlKGZpbGVVUkwsIHVzZUludGVybmFsTm9kZXMgPVRSVUUpDQpzY29yZXMgPC0geHBhdGhTQXBwbHkoZG9jLCAiLy9saVtAaWQ9J3Njb3JlYm9hcmQtZ3JvdXAtMiddIixjbGFzcz0ic2NvcmUiKQ0Kc2NvcmVzDQpgYGANCg0KLy8qW0BpZD0ic2NvcmVib2FyZC1ncm91cC0yIl0vZGl2L3VsL2xpWzFdL2Rpdi9hL2Rpdi9kaXZbMl0vZGl2WzFdL3VsL2xpWzJdL2RpdlsyXS9kaXYvc3BhblsxXQ0KDQojIyBSZWFkaW5nIGluIEpTT04NCg0KSmF2YXNjcmlwdCBPYmplY3QgTm90YXRpb24NCg0KKiBMaWdodHdlaWdodCBkYXRhIHN0b3JhZ2UgbGFuZ3VhZ2UNCiogRGF0YSBzdG9yZWQgYXMgbnVtYmVycywgc3RyaW5ncywgYm9vbGVhbnMsIGFuZCBvYmplY3RzDQoNCmh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMvanRsZWVrL3JlcG9zDQoNCg0KIyMjIEpzb25MaXRlDQppbnN0YWxsLnBhY2thZ2VzKCJodHRyIikNCmxpYnJhcnkoaHR0cikNCnNldF9jb25maWcoY29uZmlnKHNzbF92ZXJpZnlwZWVyID0gMEwpKQ0KDQpgYGB7cn0NCmxpYnJhcnkoanNvbmxpdGUpDQpgYGANCg0KanNvbkRhdGEgPC0gZnJvbUpTT04oImh0dHBzOi8vYXBpLmdpdGh1Yi5jb20vdXNlcnMvanRsZWVrL3JlcG9zIikNCm5hbWVzKGpzb25EYXRhKQ0K</div>
 
 
 </div>
