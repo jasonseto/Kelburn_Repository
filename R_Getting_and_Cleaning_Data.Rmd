@@ -144,13 +144,95 @@ https://api.github.com/users/jtleek/repos
 
 
 ### JsonLite
-install.packages("httr")
-library(httr)
-set_config(config(ssl_verifypeer = 0L))
 
+1. Install packages needed
+*install.packages("jsonlite")
+*install.packages("curl")
+
+2. These certificate installations were for ELVT, but they work fine off of the network
+*install.packages("httr")
+*library(httr)
+*set_config(config(ssl_verifypeer = 0L))
+
+3. Call the library
+*library(jsonlite)
+
+### Nested objects in JSON
+
+* https://api.github.com/users/jtleek/repos
+* You can visit the repo and see that we can call the JSON file jsonData
 ```{r}
-library(jsonlite)
-```
-
 jsonData <- fromJSON("https://api.github.com/users/jtleek/repos")
 names(jsonData)
+```
+
+### Nested objects in JSON
+
+* This pulls all the names
+```{r}
+names(jsonData$owner)
+```
+* This pulls specific portions of the jsonData for the owner login field
+```{r}
+jsonData$owner$login
+```
+### Writing data frames to JSON
+* pretty = true gives you nice indentation for reading
+* cat commands prints out what you need
+```{r}
+myjson <- toJSON(iris,pretty=TRUE)
+cat(myjson)
+```
+
+### Convert JSON to table
+```{r}
+iris2 <- fromJSON(myjson)
+head(iris2)
+```
+### Additional resources
+*json.org
+*r-bloggers.com/new-package-jsonlite-a-smarter-json-encoderdecoder
+*jsonlite vignette
+
+## The data.table Package
+* Inherets from data frame
+* all functions that accept data.frame work on data.table work much faster
+
+### Create data tables
+
+* You can create tables exactly like a data frame
+install.packages('data.table')
+
+```{r}
+library(data.table)
+```
+
+```{r}
+DF = data.frame(x=rnorm(9), y=rep(c("a","b","c"), each=3),z=rnorm(9))
+head(DF,3)
+```
+
+* We can create a data frame the exact same way 
+```{r}
+DT = data.table(x=rnorm(9), y=rep(c("a","b","c"), each=3),z=rnorm(9))
+head(DT,3)
+```
+### View tables in memory
+```{r}
+tables()
+```
+* This tells us the name of the data table, how many rows, and how many megabytes, and if there is a key
+
+### Subsetting Rows
+```{r}
+DT[2,]
+```
+
+* This pulls out just the second row of the data table
+
+```{r}
+DT[DT$y=="a"]
+```
+* You can also subset by specific values. Here we are subsetting all the values where column y = "a"
+
+
