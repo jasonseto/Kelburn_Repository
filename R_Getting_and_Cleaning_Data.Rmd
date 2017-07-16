@@ -236,3 +236,124 @@ DT[DT$y=="a"]
 * You can also subset by specific values. Here we are subsetting all the values where column y = "a"
 
 
+#Week 1 Quiz
+
+## 1
+1. 
+The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv
+
+and load the data into R. The code book, describing the variable names is here:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FPUMSDataDict06.pdf
+
+How many properties are worth $1,000,000 or more?
+
+31
+
+53
+
+24
+
+2076
+```{r}
+?download.file
+```
+
+```{r}
+setwd("~/GitHub/Kelburn_Repository")
+fileUrl <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06hid.csv"
+download.file(url=fileUrl,destfile="idaho_housing.csv")
+list.files(".")
+```
+
+```{r}
+?read.csv()
+?data.frame()
+install.packages("sqldf")
+library("sqldf")
+
+idaho_housing<- read.csv("idaho_housing.csv", header=T)
+
+head(idaho_housing)
+
+val_Bucket_Counts <- sqldf ("
+
+select 
+  VAL
+  ,count(*) as count
+from idaho_housing
+  where val >= 24
+  group by VAL
+
+                       ")
+
+val_Bucket_Counts
+
+```
+
+
+## 2 
+
+Use the data you loaded from Question 1. Consider the variable FES in the code book. Which of the "tidy data" principles does this variable violate?
+
+Numeric values in tidy data can not represent categories.
+
+Tidy data has no missing values.
+
+X Tidy data has one variable per column.
+
+Each variable in a tidy data set has been transformed to be interpretable.
+
+```{r}
+str(idaho_housing$FES)
+```
+Family type and employment status
+
+```{r}
+FES_Bucket_Count <- sqldf("
+                          select fes
+                          , count(*) as count
+                        from 
+                          idaho_housing
+                          group by FES")
+```
+
+## 3
+Download the Excel spreadsheet on Natural Gas Aquisition Program here:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx
+
+Read rows 18-23 and columns 7-15 into R and assign the result to a variable called:
+
+dat
+What is the value of:
+
+sum(dat$Zip*dat$Ext,na.rm=T)
+(original data source: http://catalog.data.gov/dataset/natural-gas-acquisition-program)
+
+154339
+
+36534720
+
+NA
+
+0
+```{r}
+install.packages("xlsx")
+library(xlsx)
+install.packages("rJava")
+library("rJava")
+```
+
+```{r}
+setwd("~/Github/Kelburn_Repository")
+fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"
+download.file(url=fileURL,destfile="NGAP.xlsx")
+```
+```{r}
+NGAP<-read.xlsx("~/Github/Kelburn_Repository/NGAP.xlsx",header=true)
+```
+
+
