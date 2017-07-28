@@ -1,5 +1,6 @@
 ---
 title: "R Notebook - Getting and Cleaning Data"
+date: July 2017
 output: 
   html_notebook:
     toc: TRUE
@@ -60,7 +61,6 @@ rootNode[[1]][[1]]
 ```
 
 ###Programatically extract various parts of the xml
-
 ```{r tidy=TRUE} 
 xmlSApply(rootNode,xmlValue)
 ```
@@ -71,7 +71,7 @@ If you want to extract some of the XML document you can use the XPath language
 
 Link: www.stat.berkeley.edu/~statcur/Workshop2/Presentations/XML.pdf
 
-Some basic commands:
+####Some basic commands:
 
 XPath                   Description
 ------------            ------------
@@ -79,7 +79,6 @@ XPath                   Description
 //node                  Node at any level
 node[@attr_name]        Node with any attribute name
 node[@attr-name='bob']  Node with attribute name attr-name = bob
-
 
 ###Get Items and menu prices
 
@@ -94,7 +93,6 @@ xpathSApply(rootNode,"//name", xmlValue)
 ```
 
 Now try the same thing for price
-
 ```{r}
 xpathSApply(rootNode,"//price", xmlValue)
 ```
@@ -107,7 +105,7 @@ http://www.espn.com/nfl/team/_/name/bal/baltimore-ravens
 2. View Source
 3. It's an extensive HTML
 
-* Trying to pull scores against different teams
+Trying to pull scores against different teams
 
 1. Load URL
 2. Parse as HTML (note that it's slightly different from XML and you can see HTML at the top)
@@ -190,9 +188,9 @@ iris2 <- fromJSON(myjson)
 head(iris2)
 ```
 ### Additional resources
-*json.org
-*r-bloggers.com/new-package-jsonlite-a-smarter-json-encoderdecoder
-*jsonlite vignette
+* json.org
+* r-bloggers.com/new-package-jsonlite-a-smarter-json-encoderdecoder
+* jsonlite vignette
 
 ## The data.table Package
 * Inherets from data frame
@@ -201,8 +199,8 @@ head(iris2)
 ### Create data tables
 
 * You can create tables exactly like a data frame
-install.packages('data.table')
 
+install.packages('data.table')
 ```{r}
 library(data.table)
 ```
@@ -284,7 +282,6 @@ select
   VAL
   ,count(*) as count
 from idaho_housing
-  where val >= 24
   group by VAL
 
                        ")
@@ -318,6 +315,8 @@ FES_Bucket_Count <- sqldf("
                         from 
                           idaho_housing
                           group by FES")
+
+FES_Bucket_Count
 ```
 
 ## 3
@@ -340,20 +339,216 @@ sum(dat$Zip*dat$Ext,na.rm=T)
 NA
 
 0
+
+
+###Install the right packages
+
+* Initially tried to use the XLSX package, but I did not have JAVA available, so had to drop that
 ```{r}
 install.packages("xlsx")
 library(xlsx)
 install.packages("rJava")
 library("rJava")
 ```
+* Tried the Excel package but it was not available for my version
+```{r}
+install.packages("excel")
+library("excel")
+
+```
+####Open XLSX was the way to go
+```{r}
+install.packages("openxlsx")
+library("openxlsx")
+```
+
+
+Something wrong with the file download, and ended up having to manually download it and transfer to the github folder. Must be a token issue
 
 ```{r}
 setwd("~/Github/Kelburn_Repository")
-fileURL <- "https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xlsx"
-download.file(url=fileURL,destfile="NGAP.xlsx")
-```
-```{r}
-NGAP<-read.xlsx("~/Github/Kelburn_Repository/NGAP.xlsx",header=true)
+fileURL <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2FDATA.gov_NGAP.xls"
+download.file(url=fileURL,destfile="Test.xls")
 ```
 
+###Filter for rows and columns in the question
+```{r}
+dat<- read.xlsx("NGAP.xlsx", sheet = 1, startRow = 1, colNames = TRUE,
+rowNames = FALSE, detectDates = FALSE, skipEmptyRows = TRUE,
+skipEmptyCols = TRUE, rows = 18:23, cols = 7:15, check.names = FALSE,
+namedRegion = NULL, na.strings = "NA", fillMergedCells = FALSE)
+
+head(dat)
+```
+
+```{r}
+sum(dat$Zip*dat$Ext,na.rm=T)
+```
+##4
+
+Read the XML data on Baltimore restaurants from here:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml
+
+How many restaurants have zipcode 21231?
+
+181
+
+100
+
+127
+
+17
+
+### Install proper packages
+install.packages("XML")
+library("XML")
+library("sqldf")
+```{r}
+fileurl <- "http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Frestaurants.xml"
+doc <- xmlTreeParse(fileurl,useInternal=TRUE)
+rootNode <- xmlRoot(doc)
+xmlName(rootNode)
+```
+
+```{r}
+zip <- xpathSApply(rootNode,"//zipcode", xmlValue)
+
+zip_data <- data.frame(zip)
+
+query_zip <- sqldf("
+                   select count(*) as count_zips
+                   from zip_data
+                    where zip in ('21231')
+                   ")
+
+query_zip
+```
+
+##5
+The American Community Survey distributes downloadable data about United States communities. Download the 2006 microdata survey about housing for the state of Idaho using download.file() from here:
+
+https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv
+
+using the fread() command load the data into an R object
+
+DT
+The following are ways to calculate the average value of the variable
+
+pwgtp15
+broken down by sex. Using the data.table package, which will deliver the fastest user time?
+
+
+
+
+```{r}
+#https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv
+
+URL<- https://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv
+  
+download.file("http://d396qusza40orc.cloudfront.net/getdata%2Fdata%2Fss06pid.csv","ACS.csv")
+```
+
+```{r}
+
+library(data.table)
+
+fread(input, sep="auto", sep2="auto", nrows=-1L, header="auto", na.strings="NA", file,
+stringsAsFactors=FALSE, verbose=getOption("datatable.verbose"), autostart=1L,
+skip=0L, select=NULL, drop=NULL, colClasses=NULL,
+integer64=getOption("datatable.integer64"),         # default: "integer64"
+dec=if (sep!=".") "." else ",", col.names, 
+check.names=FALSE, encoding="unknown", quote="\"", 
+strip.white=TRUE, fill=FALSE, blank.lines.skip=FALSE, key=NULL, 
+showProgress=getOption("datatable.showProgress"),   # default: TRUE
+data.table=getOption("datatable.fread.datatable")   # default: TRUE
+)
+
+DT<- fread("ACS.csv")
+
+head(DT)
+```
+
+mean(DT$pwgtp15,by=DT$SEX)
+
+tapply(DT$pwgtp15,DT$SEX,mean)
+
+mean(DT[DT$SEX==1,]$pwgtp15); mean(DT[DT$SEX==2,]$pwgtp15)
+
+DT[,mean(pwgtp15),by=SEX]
+
+rowMeans(DT)[DT$SEX==1]; rowMeans(DT)[DT$SEX==2]
+
+sapply(split(DT$pwgtp15,DT$SEX),mean)
+
+### Start the clock!
+ptm <- proc.time()
+mean(DT$pwgtp15,by=DT$SEX)
+### Stop the clock
+proc.time() - ptm
+
+### Start the clock!
+ptm <- proc.time()
+tapply(DT$pwgtp15,DT$SEX,mean)
+### Stop the clock
+proc.time() - ptm
+
+### Start the clock!
+ptm <- proc.time()
+mean(DT[DT$SEX==1,]$pwgtp15); mean(DT[DT$SEX==2,]$pwgtp15)
+### Stop the clock
+proc.time() - ptm
+
+### Start the clock!
+ptm <- proc.time()
+DT[,mean(pwgtp15),by=SEX]
+### Stop the clock
+proc.time() - ptm
+
+### Start the clock!
+ptm <- proc.time()
+mean(DT[DT$SEX==1,]$pwgtp15); mean(DT[DT$SEX==2,]$pwgtp15)
+### Stop the clock
+proc.time() - ptm
+
+### Start the clock!
+ptm <- proc.time()
+sapply(split(DT$pwgtp15,DT$SEX),mean)
+### Stop the clock
+proc.time() - ptm
+
+#Week 2
+
+## Reading from MySQL
+### mySQL
+1. Free and widely used open source
+2. Structured in DB, tables fields
+3. Each row is a record
+
+mysql.com
+
+### Example structure
+
+1. You can have multiple schemas that link in a star schema
+
+### Install MySql
+http://dev.mysql.com/doc/refman/5.7/en/installing.html
+
+1. You can install it for a variety of operating systems
+2. Creating a mysql database on your own system
+
+### Install RMySQL
+
+1. On Windows: vanderbilt.edu
+2. Official instructions: biostat.mc.vanderbilt.edu
+3. ahschuls.de/2013/07...
+
+
+
+
+
+## Reading from HDFS
+## Reading from the Web
+## Reading from API
+## Reading from other sources
 

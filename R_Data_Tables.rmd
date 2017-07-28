@@ -1,0 +1,45 @@
+?data.table
+
+example(data.table)
+
+#Learning Data Frames
+
+### Loading data frames and data tables 
+```{r}
+DF = data.frame(x=rep(c("b","a","c"),each=3), y=c(1,3,6), v=1:9)
+DT = data.table(x=rep(c("b","a","c"),each=3), y=c(1,3,6), v=1:9)
+
+DF
+DT
+```
+
+* The tables are exactly the same in dimensions
+```{r}
+identical(dim(DT), dim(DF))
+identical(DF$a, DT$a)
+is.list(DF)
+is.list(DT) 
+```
+
+* DT table is a data.frame
+```{r}
+is.data.frame(DT)
+```
+
+
+### Subsetting specific rows and columns in a data frame
+
+* Pulling out just the second row, you can use the vector 
+```{r}
+DT
+DT[2]
+```
+
+* Pulling out just the second row, second value using [2,2] to identify the specific records you want 
+```{r}
+DT
+DT[2,2]
+```
+
+write.csv (DT, file= ~)
+
