@@ -1,0 +1,96 @@
+---
+title: "Random_Forest"
+author: "Jason Seto"
+date: "July 28, 2017"
+output: html_document
+---
+
+install.packages("randomForest")
+install.packages("caret")
+install.packages("MASS")
+
+```{r}
+library("MASS")
+library(randomForest)
+```
+
+# Setting up the data
+## Setting the seed for sample data
+```{r}
+set.seed(123)
+```
+
+## Setting up the fram
+* The help statement allows you to view background information about the birthwt
+* Data about what is indicative of bwt - birthweight in grams. There is also data about the predictor values like age, race
+* There is also a binary predictor of Low (less than 2.5 kg)
+
+```{r}
+DataFrame <- birthwt
+help("birthwt")
+```
+
+## Let's look at the structure and dimensions
+* Notice that all the varaibles are integers
+* 189 records, and 10 variables
+* The summary function gives you summary statistics about the table
+```{r}
+str(DataFrame)
+dim(DataFrame)
+head(DataFrame)
+summary(DataFrame)
+```
+
+## Check the number of unique values
+```{r}
+apply(DataFrame,2,function(x) length(unique(x))
+```
+
+```{r}
+hist(DataFrame$age)
+```
+# Cleaning the data
+
+* You need to convert categorical variables using as.factor
+
+
+
+# Plotting AUC
+
+
+
+# Plotting an ROC
+
+
+
+
+
+
+
+
+
+
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
