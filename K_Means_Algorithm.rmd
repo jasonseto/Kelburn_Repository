@@ -1,0 +1,54 @@
+---
+title: "K-Means Algorithm"
+output: html_notebook
+---
+
+# K-means Algorithm
+
+* Assume euclidean space/distance (the straight line distance between two points)
+* start by picking k, the number of clusters
+* initialize clusters by picking one point per cluster
+
+1. For each point, place a cluster whose current centroid it is the nearest to
+2. After all points are assigned update the locations
+3. Reassign all points to their closest centroid
+
+## How do we assign K, the number of K?
+
+* since we do not know the value of K, we have to try different amounts and see what looks good
+* Good is defined as the average distance between the distance and the centroid. Too few, then the average distance is too large, too many, and the clusters are not meaningful
+* You want to pick a value of a curb that's the lowest point in the diminishing point of return on the average distance of the curve
+
+## Choosing Initial K Points
+
+### Sampling
+
+* Cluster a sample of the data using hierarchical clustering to obtain k clusters
+* Pick a point from each cluster (point closest to centroid)
+* Sample fits into memory
+
+### Pick Dispersed set of points
+* Pick points at random
+* Pick points that are as far away
+
+# Hierarchical Clustering
+
+* Agglomerative
+* Divisive
+
+```{r}
+
+```
+
+
+This is an [R Markdown](http://rmarkdown.rstudio.com) Notebook. When you execute code within the notebook, the results appear beneath the code. 
+
+Try executing this chunk by clicking the *Run* button within the chunk or by placing your cursor inside it and pressing *Ctrl+Shift+Enter*. 
+
+```{r}
+plot(cars)
+```
+
+Add a new chunk by clicking the *Insert Chunk* button on the toolbar or by pressing *Ctrl+Alt+I*.
+
+When you save the notebook, an HTML file containing the code and output will be saved alongside it (click the *Preview* button or press *Ctrl+Shift+K* to preview the HTML file).
