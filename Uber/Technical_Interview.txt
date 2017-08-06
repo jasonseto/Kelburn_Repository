@@ -1,0 +1,50 @@
+# This is the text editor interface. 
+# Anything you type or change here will be seen by the other person in real time.
+
+Trips
+
+column:
+trip_id, rider_id, driver_id, trip_fare, trip_ts,cb_date, cb_amount
+Question:
+chargeback 
+arrival curve; x-axis: days since trip, y-axis: total cb amount
+
+# number of days since trip
+# total chargeback amount by number of days since trip
+# display percentages over days
+
+select 
+--change this to date standard
+    cb_date - trip_ts as days_passed
+    , sum(cb_amount) as total_chargeback
+from trips
+group by cb_date - trip_ts
+;
+
+Q2:
+Trips
+
+column:
+trip_id, rider_id, driver_id, trip_fare, trip_ts,cb_date, cb_amount, device_id
+
+output:
+rider_id, linked_rider_id
+
+-- we want to see how many riders share a device, and we want to display it in the output data
+select 
+    a.rider_id
+    ,b.linked_rider_id
+from trips
+    inner join 
+        (
+        select rider_id as linked_rider_id
+        , device_id
+        from trips
+        ) as b on ((a.device_id = b.device_id) and (a.rider_id) =! (b.linked_rider_id)
+;
+
+select * from ^ where rider_id =! linked_rider_id
+;
+
+
+
