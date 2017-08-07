@@ -20,10 +20,10 @@ library(randomForest)
 set.seed(123)
 ```
 
-## Setting up the fram
+## Setting up the frame
 * The help statement allows you to view background information about the birthwt
 * Data about what is indicative of bwt - birthweight in grams. There is also data about the predictor values like age, race
-* There is also a binary predictor of Low (less than 2.5 kg)
+* There is also a binary predictor of Low (less than 2.5 kg). We want to leverage what udnerlying factors might be the most indicative of a low birth weight
 
 ```{r}
 DataFrame <- birthwt
@@ -43,16 +43,76 @@ summary(DataFrame)
 
 ## Check the number of unique values
 ```{r}
-apply(DataFrame,2,function(x) length(unique(x))
+apply(DataFrame,2,function(x) length(unique(x)))
 ```
+* This tells us that there are 9 variables + age, and for age, there are 24 unique values
+* Smoke and history of hypertension are all binaries and categorical and need to be converted
 
 ```{r}
 hist(DataFrame$age)
 ```
+* Hist data frames gives us a histogram of the data. This tells us that majority of women are getting their pregnancies around 20- 25
+
+
 # Cleaning the data
 
 * You need to convert categorical variables using as.factor
+* We need to use as factor to convert them from categorical to factor form otherwise the random forest algorithm will leverage the categorical variables as numbers
+* We need to tell the algorithm that they are categorical so that they can split accordingly
 
+1. Identify all the categorical variables
+2. Convert them into factor in a for loop
+```{r}
+cols <- c("low", "race", "smoke", "ptl", "ht", "ui", "ftv")
+for (i in cols){
+  DataFrame[,i] = as.factor(DataFrame[,i])
+}
+str(DataFrame)
+```
+* Note that now all the factors are no longer identified as numbers, and are instead factors
+
+# Splitting the dataset into Training and Validation datasets
+
+* caTools has some prepackaged methods for splitting a dataset
+install.packages("caTools")
+```{r}
+library("caTools")
+```
+?caTools
+
+1. Identify the target variable using the Y
+2. Set the training and test data set by using the split ratio = 0.7 to get a 70/30 sample size
+3. Set the training data with the indicator, and then select the records without the ind as the remaining split ratio
+
+```{r}
+ind <- sample.split(Y = DataFrame$low, SplitRatio = 0.7)
+trainDF <- DataFrame[ind,]
+testDF <- DataFrame[!ind,]
+```
+
+## Random Forest parameters
+
+### mTry
+* Number of variables selected at each split
+* Example, if you let mTry = 3 and samp size = 50, then you will select 3 variables and using 50 random records to try to develop the best splits using those 3 variables
+
+* Lower mTry is generally better since you need fewer variables to develop an effective model. There are less correlations between each of the decision trees
+1. Example, if you have 9 variables, and you select the mTry = 9, then you will get a bunch of combinations of the same variables
+2. Lower mTry means decreasing correlation between trees (good thing), poorer tree strength for each tree (bad thing). This means that each tree on it's own will not be as strong
+3. Need to find out how to balance between the two
+
+* Sample Size
+1. Sample size is similar, you should select a lower number than the number of existing rows
+
+### Nodesize
+
+
+### Regression
+* Regression = floor (number of variables/3), this is the default.
+* For our example in the Dataframe, that would be 3
+
+### Categorical
+* floor(sqrt(no. of independent variables))
 
 
 # Plotting AUC
