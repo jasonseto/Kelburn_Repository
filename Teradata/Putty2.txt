@@ -1,0 +1,1099 @@
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'hive' '>' '/'
+hive> NoViableAltException(14@[])
+    >         at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:
+    >         at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20
+    >         at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+    >         at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+    >         at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+    >         at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+    >         at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+    >         at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+    >         at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+    >         at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2
+    >         at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+    >         at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+    >         at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821
+    >         at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+    >         at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+    >         at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    >         at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+    >         at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+    >         at java.lang.reflect.Method.invoke(Method.java:498)
+    >         at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+    >         at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+    > FAILED: ParseException line 1:0 cannot recognize input near '/' 'mnt' '/'
+    > hive> cd hive-tables1
+    >     >
+    > ls
+    > -ls
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'NoViableAltException' '(' '14'
+hive> ls;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'ls' '<EOF>' '<EOF>'
+hive> Display all 574 possibilities? (y or n)
+hive>
+    > n
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'n' '<EOF>' '<EOF>'
+hive> n;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'n' '<EOF>' '<EOF>'
+hive> Display all 574 possibilities? (y or n)
+hive>
+    > select count(*) from shakespeare_wc;
+FAILED: SemanticException [Error 10001]: Line 1:21 Table not found 'shakespeare_wc'
+hive> set hive.execution.mode=mr;
+Query returned non-zero code: 1, cause: 'SET hive.execution.mode=mr' FAILED in validation : Invalid value.. expects one of [container, llap].
+hive> set hive.execution.enginer=mr;
+Query returned non-zero code: 1, cause: hive configuration hive.execution.enginer does not exists.
+hive> set hive.execution.engine.tez;
+hive.execution.engine.tez is undefined
+hive> set hive.execution.engine=tez;
+hive>
+    > set hive.execution.engine=tez;
+hive> select * from shakespeare_wc where word like '%e' limit 20;
+FAILED: SemanticException [Error 10001]: Line 1:14 Table not found 'shakespeare_wc'
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.401 seconds
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+Time taken: 1.843 seconds
+hive> DESCRIBE shakespeare_wc;
+OK
+word                    string
+count                   int
+Time taken: 0.042 seconds, Fetched: 2 row(s)
+hive> DESCRIBE EXTENDED shakespeare_wc;
+OK
+word                    string
+count                   int
+
+Detailed Table Information      Table(tableName:shakespeare_wc, dbName:default, owner:hadoop, createTime:1504645110, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:word, type:string, comment:null), FieldSchema(name:count, type:int, comment:null)], location:hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=  , field.delim=
+Time taken: 0.062 seconds, Fetched: 4 row(s)
+hive> DESCRIBE FORMATTED shakespeare_wc;
+OK
+# col_name              data_type               comment
+
+word                    string
+count                   int
+
+# Detailed Table Information
+Database:               default
+Owner:                  hadoop
+CreateTime:             Tue Sep 05 20:58:30 UTC 2017
+LastAccessTime:         UNKNOWN
+Retention:              0
+Location:               hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc
+Table Type:             MANAGED_TABLE
+Table Parameters:
+        COLUMN_STATS_ACCURATE   {\"BASIC_STATS\":\"true\"}
+        numFiles                0
+        numRows                 0
+        rawDataSize             0
+        totalSize               0
+        transient_lastDdlTime   1504645110
+
+# Storage Information
+SerDe Library:          org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+InputFormat:            org.apache.hadoop.mapred.TextInputFormat
+OutputFormat:           org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+Compressed:             No
+Num Buckets:            -1
+Bucket Columns:         []
+Sort Columns:           []
+Storage Desc Params:
+        field.delim             \t
+        serialization.format    \t
+Time taken: 0.046 seconds, Fetched: 32 row(s)
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+Time taken: 0.136 seconds
+hive> SELECT COUNT(*) FROM shakespeare_wc;
+OK
+0
+Time taken: 0.146 seconds, Fetched: 1 row(s)
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> ls
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'ls' '<EOF>' '<EOF>'
+hive> ls;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'ls' '<EOF>' '<EOF>'
+hive> -ls;
+NoViableAltException(337@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near '-' 'ls' '<EOF>'
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.018 seconds
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> LOAD DATA LOCAL INPATH '/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/hadoop/data/shakespeare_wc/input'': No files matching path file:/hadoop/data/shakespeare_wc/input
+hive> Display all 574 possibilities? (y or n)
+hive> drop table shakespeare_wc;
+OK
+Time taken: 1.881 seconds
+hive> ! ls;
+biganalyses_example.R
+change_pw.R
+rmr2_example.R
+wc3.txt
+hive> dfs -get /data/shakespeare_wc/input/word_count.txt word_count.txt
+    > ;
+hive> ! ls;
+biganalyses_example.R
+change_pw.R
+rmr2_example.R
+wc3.txt
+word_count.txt
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.056 seconds
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> DESCRIBE shakespeare_wc;
+OK
+word                    string
+count                   int
+Time taken: 0.035 seconds, Fetched: 2 row(s)
+hive> DESCRIBE EXTENDED shakespeare_wc;
+OK
+word                    string
+count                   int
+
+Detailed Table Information      Table(tableName:shakespeare_wc, dbName:default, owner:hadoop, createTime:1504645518, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:word, type:string, comment:null), FieldSchema(name:count, type:int, comment:null)], location:hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=  , field.delim=
+Time taken: 0.035 seconds, Fetched: 4 row(s)
+hive> DESCRIBE FORMATTED shakespeare_wc;
+OK
+# col_name              data_type               comment
+
+word                    string
+count                   int
+
+# Detailed Table Information
+Database:               default
+Owner:                  hadoop
+CreateTime:             Tue Sep 05 21:05:18 UTC 2017
+LastAccessTime:         UNKNOWN
+Retention:              0
+Location:               hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc
+Table Type:             MANAGED_TABLE
+Table Parameters:
+        COLUMN_STATS_ACCURATE   {\"BASIC_STATS\":\"true\"}
+        numFiles                0
+        numRows                 0
+        rawDataSize             0
+        totalSize               0
+        transient_lastDdlTime   1504645518
+
+# Storage Information
+SerDe Library:          org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+InputFormat:            org.apache.hadoop.mapred.TextInputFormat
+OutputFormat:           org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+Compressed:             No
+Num Buckets:            -1
+Bucket Columns:         []
+Sort Columns:           []
+Storage Desc Params:
+        field.delim             \t
+        serialization.format    \t
+Time taken: 0.036 seconds, Fetched: 32 row(s)
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+Time taken: 0.102 seconds
+hive> drop table shakespeare_wc;
+OK
+Time taken: 0.09 seconds
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.048 seconds
+hive> ! ls;
+biganalyses_example.R
+change_pw.R
+rmr2_example.R
+wc3.txt
+word_count.txt
+hive> \\esas.exclaim-prd.com\SAS Data Files\ddas\SparkClass_NoData\exercises\Hive-Tables1
+[1]+  Stopped                 hive
+[hadoop@ip-172-31-2-15 ~]$ hive
+;
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: true
+hive> ;
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.618 seconds
+hive> DESCRIBE shakespeare_wc;
+OK
+word                    string
+count                   int
+Time taken: 0.154 seconds, Fetched: 2 row(s)
+hive> load data local inpath './word_count.txt' into table shakespeare_wc;
+Loading data to table default.shakespeare_wc
+OK
+Time taken: 0.678 seconds
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+''the   1
+'above  1
+'affectionate   1
+'be     10
+'because        1
+'beware 1
+'bove   3
+'budge  1
+'came   1
+'cause  1
+'charge 1
+'choose 1
+'cide   1
+'clarence       1
+'come   2
+'couple 1
+'desire 1
+'done   1
+'e      2
+'fare   1
+Time taken: 1.957 seconds, Fetched: 20 row(s)
+hive>  * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+NoViableAltException(351@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:1 cannot recognize input near '*' 'FROM' 'shakespeare_wc'
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+''the   1
+'above  1
+'affectionate   1
+'be     10
+'because        1
+'beware 1
+'bove   3
+'budge  1
+'came   1
+'cause  1
+'charge 1
+'choose 1
+'cide   1
+'clarence       1
+'come   2
+'couple 1
+'desire 1
+'done   1
+'e      2
+'fare   1
+Time taken: 0.115 seconds, Fetched: 20 row(s)
+hive> set hive.execution.engine=tez;
+hive>
+
+
+-----------------
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'hive' '>' '/'
+hive> NoViableAltException(14@[])
+    >         at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:
+    >         at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20
+    >         at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+    >         at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+    >         at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+    >         at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+    >         at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+    >         at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+    >         at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+    >         at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2
+    >         at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+    >         at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+    >         at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821
+    >         at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+    >         at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+    >         at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+    >         at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+    >         at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+    >         at java.lang.reflect.Method.invoke(Method.java:498)
+    >         at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+    >         at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+    > FAILED: ParseException line 1:0 cannot recognize input near '/' 'mnt' '/'
+    > hive> cd hive-tables1
+    >     >
+    > ls
+    > -ls
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'NoViableAltException' '(' '14'
+hive> ls;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'ls' '<EOF>' '<EOF>'
+hive> Display all 574 possibilities? (y or n)
+hive>
+    > n
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'n' '<EOF>' '<EOF>'
+hive> n;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'n' '<EOF>' '<EOF>'
+hive> Display all 574 possibilities? (y or n)
+hive>
+    > select count(*) from shakespeare_wc;
+FAILED: SemanticException [Error 10001]: Line 1:21 Table not found 'shakespeare_wc'
+hive> set hive.execution.mode=mr;
+Query returned non-zero code: 1, cause: 'SET hive.execution.mode=mr' FAILED in validation : Invalid value.. expects one of [container, llap].
+hive> set hive.execution.enginer=mr;
+Query returned non-zero code: 1, cause: hive configuration hive.execution.enginer does not exists.
+hive> set hive.execution.engine.tez;
+hive.execution.engine.tez is undefined
+hive> set hive.execution.engine=tez;
+hive>
+    > set hive.execution.engine=tez;
+hive> select * from shakespeare_wc where word like '%e' limit 20;
+FAILED: SemanticException [Error 10001]: Line 1:14 Table not found 'shakespeare_wc'
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.401 seconds
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+Time taken: 1.843 seconds
+hive> DESCRIBE shakespeare_wc;
+OK
+word                    string
+count                   int
+Time taken: 0.042 seconds, Fetched: 2 row(s)
+hive> DESCRIBE EXTENDED shakespeare_wc;
+OK
+word                    string
+count                   int
+
+Detailed Table Information      Table(tableName:shakespeare_wc, dbName:default, owner:hadoop, createTime:1504645110, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:word, type:string, comment:null), FieldSchema(name:count, type:int, comment:null)], location:hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=  , field.delim=
+Time taken: 0.062 seconds, Fetched: 4 row(s)
+hive> DESCRIBE FORMATTED shakespeare_wc;
+OK
+# col_name              data_type               comment
+
+word                    string
+count                   int
+
+# Detailed Table Information
+Database:               default
+Owner:                  hadoop
+CreateTime:             Tue Sep 05 20:58:30 UTC 2017
+LastAccessTime:         UNKNOWN
+Retention:              0
+Location:               hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc
+Table Type:             MANAGED_TABLE
+Table Parameters:
+        COLUMN_STATS_ACCURATE   {\"BASIC_STATS\":\"true\"}
+        numFiles                0
+        numRows                 0
+        rawDataSize             0
+        totalSize               0
+        transient_lastDdlTime   1504645110
+
+# Storage Information
+SerDe Library:          org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+InputFormat:            org.apache.hadoop.mapred.TextInputFormat
+OutputFormat:           org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+Compressed:             No
+Num Buckets:            -1
+Bucket Columns:         []
+Sort Columns:           []
+Storage Desc Params:
+        field.delim             \t
+        serialization.format    \t
+Time taken: 0.046 seconds, Fetched: 32 row(s)
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+Time taken: 0.136 seconds
+hive> SELECT COUNT(*) FROM shakespeare_wc;
+OK
+0
+Time taken: 0.146 seconds, Fetched: 1 row(s)
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> ls
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'ls' '<EOF>' '<EOF>'
+hive> ls;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'ls' '<EOF>' '<EOF>'
+hive> -ls;
+NoViableAltException(337@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near '-' 'ls' '<EOF>'
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.018 seconds
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> LOAD DATA LOCAL INPATH '/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/hadoop/data/shakespeare_wc/input'': No files matching path file:/hadoop/data/shakespeare_wc/input
+hive> Display all 574 possibilities? (y or n)
+hive> drop table shakespeare_wc;
+OK
+Time taken: 1.881 seconds
+hive> ! ls;
+biganalyses_example.R
+change_pw.R
+rmr2_example.R
+wc3.txt
+hive> dfs -get /data/shakespeare_wc/input/word_count.txt word_count.txt
+    > ;
+hive> ! ls;
+biganalyses_example.R
+change_pw.R
+rmr2_example.R
+wc3.txt
+word_count.txt
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.056 seconds
+hive> LOAD DATA LOCAL INPATH '/home/hadoop/data/shakespeare_wc/input'
+    > INTO TABLE shakespeare_wc;
+FAILED: SemanticException Line 1:23 Invalid path ''/home/hadoop/data/shakespeare_wc/input'': No files matching path file:/home/hadoop/data/shakespeare_wc/input
+hive> DESCRIBE shakespeare_wc;
+OK
+word                    string
+count                   int
+Time taken: 0.035 seconds, Fetched: 2 row(s)
+hive> DESCRIBE EXTENDED shakespeare_wc;
+OK
+word                    string
+count                   int
+
+Detailed Table Information      Table(tableName:shakespeare_wc, dbName:default, owner:hadoop, createTime:1504645518, lastAccessTime:0, retention:0, sd:StorageDescriptor(cols:[FieldSchema(name:word, type:string, comment:null), FieldSchema(name:count, type:int, comment:null)], location:hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc, inputFormat:org.apache.hadoop.mapred.TextInputFormat, outputFormat:org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat, compressed:false, numBuckets:-1, serdeInfo:SerDeInfo(name:null, serializationLib:org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe, parameters:{serialization.format=  , field.delim=
+Time taken: 0.035 seconds, Fetched: 4 row(s)
+hive> DESCRIBE FORMATTED shakespeare_wc;
+OK
+# col_name              data_type               comment
+
+word                    string
+count                   int
+
+# Detailed Table Information
+Database:               default
+Owner:                  hadoop
+CreateTime:             Tue Sep 05 21:05:18 UTC 2017
+LastAccessTime:         UNKNOWN
+Retention:              0
+Location:               hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/shakespeare_wc
+Table Type:             MANAGED_TABLE
+Table Parameters:
+        COLUMN_STATS_ACCURATE   {\"BASIC_STATS\":\"true\"}
+        numFiles                0
+        numRows                 0
+        rawDataSize             0
+        totalSize               0
+        transient_lastDdlTime   1504645518
+
+# Storage Information
+SerDe Library:          org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+InputFormat:            org.apache.hadoop.mapred.TextInputFormat
+OutputFormat:           org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+Compressed:             No
+Num Buckets:            -1
+Bucket Columns:         []
+Sort Columns:           []
+Storage Desc Params:
+        field.delim             \t
+        serialization.format    \t
+Time taken: 0.036 seconds, Fetched: 32 row(s)
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+Time taken: 0.102 seconds
+hive> drop table shakespeare_wc;
+OK
+Time taken: 0.09 seconds
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.048 seconds
+hive> ! ls;
+biganalyses_example.R
+change_pw.R
+rmr2_example.R
+wc3.txt
+word_count.txt
+hive> \\esas.exclaim-prd.com\SAS Data Files\ddas\SparkClass_NoData\exercises\Hive-Tables1
+[1]+  Stopped                 hive
+[hadoop@ip-172-31-2-15 ~]$ hive
+;
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: true
+hive> ;
+hive> CREATE TABLE IF NOT EXISTS shakespeare_wc (
+    >   word  STRING, count INT)
+    > ROW FORMAT DELIMITED FIELDS TERMINATED BY '\t';
+OK
+Time taken: 0.618 seconds
+hive> DESCRIBE shakespeare_wc;
+OK
+word                    string
+count                   int
+Time taken: 0.154 seconds, Fetched: 2 row(s)
+hive> load data local inpath './word_count.txt' into table shakespeare_wc;
+Loading data to table default.shakespeare_wc
+OK
+Time taken: 0.678 seconds
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+''the   1
+'above  1
+'affectionate   1
+'be     10
+'because        1
+'beware 1
+'bove   3
+'budge  1
+'came   1
+'cause  1
+'charge 1
+'choose 1
+'cide   1
+'clarence       1
+'come   2
+'couple 1
+'desire 1
+'done   1
+'e      2
+'fare   1
+Time taken: 1.957 seconds, Fetched: 20 row(s)
+hive>  * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+NoViableAltException(351@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:1 cannot recognize input near '*' 'FROM' 'shakespeare_wc'
+hive> SELECT * FROM shakespeare_wc WHERE word LIKE '%e' LIMIT 20;
+OK
+''the   1
+'above  1
+'affectionate   1
+'be     10
+'because        1
+'beware 1
+'bove   3
+'budge  1
+'came   1
+'cause  1
+'charge 1
+'choose 1
+'cide   1
+'clarence       1
+'come   2
+'couple 1
+'desire 1
+'done   1
+'e      2
+'fare   1
+Time taken: 0.115 seconds, Fetched: 20 row(s)
+hive> set hive.execution.engine=tez;
+hive> cd ../hive-tables2
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'cd' '.' '.'
+hive>
+[2]+  Stopped                 hive
+[hadoop@ip-172-31-2-15 ~]$ cd ../hive-tables2
+-bash: cd: ../hive-tables2: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ ls
+biganalyses_example.R  change_pw.R  rmr2_example.R  wc3.txt  word_count.txt
+[hadoop@ip-172-31-2-15 ~]$ cd ../Hive-Tables2
+-bash: cd: ../Hive-Tables2: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ cd
+[hadoop@ip-172-31-2-15 ~]$ pwd
+/home/hadoop
+[hadoop@ip-172-31-2-15 ~]$ cd ../Hive-Tables2/
+-bash: cd: ../Hive-Tables2/: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ hive -d db=default -f tables.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: true
+Could not open input file for reading. (File file:/home/hadoop/tables.hql does not exist)
+[hadoop@ip-172-31-2-15 ~]$ cd /mnt/sparkclasses/exercises/hive-tables2
+-bash: cd: /mnt/sparkclasses/exercises/hive-tables2: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ cd /mnt/sparkclass/exercises/hive-tables2
+-bash: cd: /mnt/sparkclass/exercises/hive-tables2: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ cd /mnt/sparkclass/exercises/hive-tables2
+-bash: cd: /mnt/sparkclass/exercises/hive-tables2: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ pwd
+/home/hadoop
+[hadoop@ip-172-31-2-15 ~]$ cd /mnt/sparkclass/exercises/hive-tables2
+-bash: cd: /mnt/sparkclass/exercises/hive-tables2: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ pwd
+/home/hadoop
+[hadoop@ip-172-31-2-15 ~]$ cd /mnt/sparkclass/exercises/H
+Hadoop-Architecture/ Hive-LoadingData/    Hive-Schemas/        Hive-Tables1/        Hive-Tables2/        Hive-Walkthrough/
+[hadoop@ip-172-31-2-15 ~]$ cd /mnt/sparkclass/exercises/Hive-Tables2
+[hadoop@ip-172-31-2-15 Hive-Tables2]$ ls
+tables.hql
+[hadoop@ip-172-31-2-15 Hive-Tables2]$ hive -d db=default -f tables.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: true
+NoViableAltException(15@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser_IdentifiersParser.identifier(HiveParser_IdentifiersParser.java:11072)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.identifier(HiveParser.java:42098)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.switchDatabaseStatement(HiveParser.java:5576)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.ddlStatement(HiveParser.java:3780)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.execStatement(HiveParser.java:2382)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1333)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:336)
+        at org.apache.hadoop.hive.cli.CliDriver.processReader(CliDriver.java:474)
+        at org.apache.hadoop.hive.cli.CliDriver.processFile(CliDriver.java:490)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:793)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 3:4 cannot recognize input near '$' '{' 'DB' in switch database statement
+[hadoop@ip-172-31-2-15 Hive-Tables2]$ hive -d DB=default -f tables.hql
+
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: true
+OK
+Time taken: 0.868 seconds
+OK
+Time taken: 0.261 seconds
+OK
+Time taken: 0.192 seconds
+[hadoop@ip-172-31-2-15 Hive-Tables2]$ pwd
+/mnt/sparkclass/exercises/Hive-Tables2
+[hadoop@ip-172-31-2-15 Hive-Tables2]$

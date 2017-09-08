@@ -1,0 +1,172 @@
+login as: hadoop
+Authenticating with public key "imported-openssh-key"
+Last login: Wed Sep  6 16:34:38 2017
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2017.03-release-notes/
+9 package(s) needed for security, out of 13 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+[hadoop@ip-172-31-2-15 ~]$ spark-shell
+17/09/06 16:38:21 WARN Client: Neither spark.yarn.jars nor spark.yarn.archive is set, falling back to uploading libraries under SPARK_HOME.
+Spark context Web UI available at http://ip-172-31-2-15.ec2.internal:4040
+Spark context available as 'sc' (master = yarn, app id = application_15046131232
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 2.2.0
+      /_/
+
+Using Scala version 2.11.8 (OpenJDK 64-Bit Server VM, Java 1.8.0_141)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> val shakes = sc.textFile("/data/shakespeare/input")
+shakes: org.apache.spark.rdd.RDD[String] = /data/shakespeare/input MapPartitions
+
+scala> shakes.take(1)
+res0: Array[String] = Array("   1 KING HENRY IV")
+
+scala> shakes.take(10)
+res1: Array[String] = Array("   1 KING HENRY IV", "", "", "     DRAMATIS PERSONA
+
+scala> shakes.take(20)
+res2: Array[String] = Array("   1 KING HENRY IV", "", "", "     DRAMATIS PERSONAPRINCE HENRY:)  |, "            | sons of the King", JOHN of Lancaster  (LANCASTWorcester. (EARL OF WORCESTER:))
+
+scala> sc
+res3: org.apache.spark.SparkContext = org.apache.spark.SparkContext@56114349
+
+scala> sc.appName
+res4: String = Spark shell
+
+scala> sc.getExectuorMemoryStatus
+<console>:25: error: value getExectuorMemoryStatus is not a member of org.apache
+       sc.getExectuorMemoryStatus
+          ^
+
+scala> sc.getExecutorMemoryStatus
+res6: scala.collection.Map[String,(Long, Long)] = Map(172.31.2.15:33511 -> (4340
+
+scala> sc.Version
+<console>:25: error: value Version is not a member of org.apache.spark.SparkCont
+       sc.Version
+          ^
+
+scala> sc.version
+res8: String = 2.2.0
+
+scala> res6
+res9: scala.collection.Map[String,(Long, Long)] = Map(172.31.2.15:33511 -> (4340
+
+scala> val smallprimes = sc.parallelize(Array(2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+     | 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97))
+smallprimes: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[2] at paralle
+
+scala> val smallprimes = sc.parallelize(Array(5, 10,15,20,50,100,10000000))
+smallprimes: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[3] at paralle
+
+scala> smallprimes.count()
+res10: Long = 7
+
+scala> val smallprimes = sc.parallelize(Array(2, 3, 5, 7, 11, 13, 17, 19, 23, 29
+     | 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97))
+smallprimes: org.apache.spark.rdd.RDD[Int] = ParallelCollectionRDD[4] at paralle
+
+scala> smallprimes.count
+res11: Long = 25
+
+scala> smallprimes.min
+res12: Int = 2
+
+scala> smallprimes.max
+res13: Int = 97
+
+scala> smallprimes.mean
+mean   meanApprox
+
+scala> smallprimes.mean
+res14: Double = 42.4
+
+scala> smallprimes.sum
+sum   sumApprox
+
+scala> smallprimes.sum
+res15: Double = 1060.0
+
+scala> smallprimes.collect
+collect   collectAsync
+
+scala> smallprimes.collect
+res16: Array[Int] = Array(2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47
+
+scala> val rdd = sc.textFile("/data/stocks-flat/input")
+rdd: org.apache.spark.rdd.RDD[String] = /data/stocks-flat/input MapPartitionsRDD
+
+scala> rdd.first
+res17: String = NASDAQ,AAIT,2015-06-22,35.299999,35.299999,35.299999,35.299999,3
+
+scala> rdd.count
+res18: Long = 2131092
+
+scala> rdd aapl = rdd.filter( line => line.contains("AAPL"))
+<console>:28: error: value aapl is not a member of org.apache.spark.rdd.RDD[Stri
+val $ires6 = rdd.aapl
+                 ^
+<console>:26: error: value aapl is not a member of org.apache.spark.rdd.RDD[Stri
+       rdd aapl = rdd.filter( line => line.contains("AAPL"))
+           ^
+
+scala> val  aapl = rdd.filter( line => line.contains("AAPL"))
+aapl: org.apache.spark.rdd.RDD[String] = MapPartitionsRDD[10] at filter at <cons
+
+scala> aapl.count
+res19: Long = 8706
+
+scala> val fib = Array(1,2,3,5,8,13,21,24)
+fib: Array[Int] = Array(1, 2, 3, 5, 8, 13, 21, 24)
+
+scala> def square (x: Int) = x* x
+square: (x: Int)Int
+
+scala> def divisible(x:Int) =(x%3==0)
+divisible: (x: Int)Boolean
+
+scala> fib.map(square).filter(divisible)
+res20: Array[Int] = Array(9, 441, 576)
+
+scala> fib.map(x=>x*x).filter(_%3==0)
+res21: Array[Int] = Array(9, 441, 576)
+
+scala> def double (x: Int) = x+x
+double: (x: Int)Int
+
+scala> fib.map(double)
+res22: Array[Int] = Array(2, 4, 6, 10, 16, 26, 42, 48)
+
+scala> Display all 681 possibilities? (y or n)
+
+scala>
+
+
+1. Buy-All
+2. Yodlee Bank Transactions
+3. Webapp
