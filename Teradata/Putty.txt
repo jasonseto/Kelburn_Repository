@@ -1,0 +1,917 @@
+login as: hadoop
+Authenticating with public key "imported-openssh-key"
+Last login: Tue Sep  5 20:22:05 2017 from 66-193-249-10.static.twtelecom.net
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2017.03-release-notes/
+9 package(s) needed for security, out of 13 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+[hadoop@ip-172-31-2-15 ~]$ hive
+create database
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.                                                                                        properties Async: true
+c^?hive
+    > create database carl;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:                                                                                        1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20                                                                                        4)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2                                                                                        33)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821                                                                                        )
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.                                                                                        java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces                                                                                        sorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'e' 'create' 'databa                                                                                        se'
+hive> create database carl;
+FAILED: Execution Error, return code 1 from org.apache.hadoop.hive.ql.exec.DDLTa                                                                                        sk. Database carl already exists
+hive> Display all 574 possibilities? (y or n)
+!                         !=                        $ELEM$
+$KEY$                     $VALUE$                   $elem$
+$key$                     $sum0                     $value$
+%                         &                         (
+)                         );                        *
++                         ,                         -
+.                         /                         :
+<                         <=                        <=>
+<>                        =                         ==
+>                         >=                        ABORT
+ADD                       ALL                       ALTER
+AND                       ARRAY                     AS
+ASC                       BIGINT                    BINARY
+BOOLEAN                   BUCKET                    BUCKETS
+BY                        CAST                      CLUSTER
+CLUSTERED                 COLLECTION                COLUMNS
+COMMENT                   COMPACT                   COMPACTIONS
+CONSTRAINT                CREATE                    DATA
+DATE                      DATETIME                  DEFINED
+DELIMITED                 DESC                      DESCRIBE
+DIRECTORY                 DISABLE                   DISTINCT
+DISTRIBUTE                DOUBLE                    DROP
+ENABLE                    EXCEPT                    EXPLAIN
+EXTENDED                  EXTERNAL                  FALSE
+FIELDS                    FLOAT                     FOREIGN
+FORMAT                    FROM                      FULL
+FUNCTION                  GROUP                     INPATH
+INPUTFORMAT               INSERT                    INT
+INTERSECT                 INTO                      IS
+ITEMS                     JOIN                      KEY
+KEYS                      LAST                      LEFT
+LIKE                      LIMIT                     LINES
+LOAD                      LOCAL                     LOCATION
+MAP                       MSCK                      NONE
+NORELY                    NOT                       NOVALIDATE
+NULL                      NULLS                     OF
+OFFSET                    ON                        OR
+ORDER                     OUT                       OUTER
+OUTPUTFORMAT              OVERWRITE                 PARTITION
+PARTITIONED               PARTITIONS                PRECISION
+PRIMARY                   PURGE                     REDUCE
+REFERENCES                REGEXP                    RELY
+RENAME                    REPLACE                   REWRITE
+RIGHT                     RLIKE                     ROW
+SELECT                    SEQUENCEFILE              SERDE
+SERDEPROPERTIES           SET                       SHOW
+SMALLINT                  SORT                      SORTED
+STORED                    STRING                    SUBQUERY
+TABLE                     TABLES                    TABLESAMPLE
+TBLPROPERTIES             TEMPORARY                 TERMINATED
+TEXTFILE                  TIMESTAMP                 TINYINT
+TO                        TRANSACTIONS              TRANSFORM
+TRUE                      UNION                     UPDATE
+USING                     VALIDATE                  VALUES
+WAIT                      WHERE                     WITH
+[                         \'                        ]
+^                         abort                     abs(
+acos(                     add                       add_months(
+aes_decrypt(              aes_encrypt(              all
+alter                     and                       and(
+array                     array(                    array_contains(
+as                        asc                       ascii(
+asin(                     assert_true(              atan(
+avg(                      base64                    between(
+bigint                    bigint(                   bin(
+binary                    binary(                   bloom_filter(
+boolean                   boolean(                  bround(
+bucket                    buckets                   by
+cardinality_violation(    case(                     cast
+cbrt(                     ceil(                     ceiling(
+char(                     char_length(              character_length(
+chr(                      cluster                   clustered
+coalesce(                 collect_list(             collect_set(
+collection                columns                   comment
+compact                   compactions               compute_stats(
+concat(                   concat_ws(                constraint
+context_ngrams(           conv(                     corr(
+cos(                      count(                    covar_pop(
+covar_samp(               crc32                     create
+create_union(             cume_dist(                current_database(
+current_date(             current_timestamp(        current_user(
+data                      date                      date(
+date_add(                 date_format(              date_sub(
+datediff(                 datetime                  day(
+dayofmonth(               dayofweek(                decimal(
+decode(                   defined                   degrees(
+delimited                 dense_rank(               desc
+describe                  directory                 disable
+distinct                  distribute                div(
+double                    double(                   drop
+e(                        elt(                      enable
+encode(                   ewah_bitmap(              ewah_bitmap_and(
+ewah_bitmap_empty(        ewah_bitmap_or(           except
+exp(                      explain                   explode(
+extended                  external                  extract_union(
+factorial(                false                     field(
+fields                    find_in_set(              first_value(
+float                     float(                    floor(
+floor_day(                floor_hour(               floor_minute(
+floor_month(              floor_quarter(            floor_second(
+floor_week(               floor_year(               foreign
+format                    format_number(            from
+from_unixtime(            from_utc_timestamp(       full
+function                  get_json_object(          get_splits(
+greatest(                 group                     grouping(
+hash(                     hex(                      histogram_numeric(
+hour(                     if(                       in(
+in_bloom_filter(          in_file(                  index(
+initcap(                  inline(                   inpath
+inputformat               insert                    instr(
+int                       int(                      internal_interval(
+intersect                 interval_day_time(        interval_year_month(
+into                      is                        isnotnull(
+isnull(                   items                     java_method(
+join                      json_tuple(               key
+keys                      lag(                      last
+last_day(                 last_value(               lcase(
+lead(                     least(                    left
+length(                   levenshtein(              like
+like(                     limit                     lines
+ln(                       load                      local
+locate(                   location                  log(
+log10                     log2                      logged_in_user(
+lower(                    lpad(                     ltrim(
+map                       map(                      map_keys(
+map_values(               mask(                     mask_first_n(
+mask_hash(                mask_last_n(              mask_show_first_n(
+mask_show_last_n(         matchpath(                max(
+md5                       min(                      minute(
+mod(                      month(                    months_between(
+msck                      named_struct(             negative(
+next_day(                 ngrams(                   none
+noop(                     noopstreaming(            noopwithmap(
+noopwithmapstreaming(     norely                    not
+not(                      novalidate                ntile(
+null                      nullif(                   nulls
+nvl(                      octet_length(             of
+offset                    on                        or
+or(                       order                     out
+outer                     outputformat              overwrite
+parse_url(                parse_url_tuple(          partition
+partitioned               partitions                percent_rank(
+percentile(               percentile_approx(        pi(
+pmod(                     posexplode(               positive(
+pow(                      power(                    precision
+primary                   printf(                   purge
+quarter(                  radians(                  rand(
+rank(                     reduce                    references
+reflect(                  reflect2                  regexp
+regexp(                   regexp_extract(           regexp_replace(
+regr_avgx(                regr_avgy(                regr_count(
+regr_intercept(           regr_r2                   regr_slope(
+regr_sxx(                 regr_sxy(                 regr_syy(
+rely                      rename                    repeat(
+replace                   replace(                  replicate_rows(
+reverse(                  rewrite                   right
+rlike                     rlike(                    round(
+row                       row_number(               rpad(
+rtrim(                    second(                   select
+sentences(                sequencefile              serde
+serdeproperties           set                       sha(
+sha1                      sha2                      shiftleft(
+shiftright(               shiftrightunsigned(       show
+sign(                     sin(                      size(
+smallint                  smallint(                 sort
+sort_array(               sort_array_by(            sorted
+soundex(                  space(                    split(
+sq_count_check(           sqrt(                     stack(
+std(                      stddev(                   stddev_pop(
+stddev_samp(              stored                    str_to_map(
+string                    string(                   struct(
+subquery                  substr(                   substring(
+substring_index(          sum(                      table
+tables                    tablesample               tan(
+tblproperties             temporary                 terminated
+textfile                  timestamp                 timestamp(
+tinyint                   tinyint(                  to
+to_date(                  to_unix_timestamp(        to_utc_timestamp(
+transactions              transform                 translate(
+trim(                     true                      trunc(
+ucase(                    unbase64                  unhex(
+union                     unix_timestamp(           update
+upper(                    using                     uuid(
+validate                  values                    var_pop(
+var_samp(                 varchar(                  variance(
+version(                  wait                      weekofyear(
+when(                     where                     windowingtablefunction(
+with                      xpath(                    xpath_boolean(
+xpath_double(             xpath_float(              xpath_int(
+xpath_long(               xpath_number(             xpath_short(
+xpath_string(             year(                     |
+~
+hive> show databases
+    > ;
+OK
+carl
+default
+Time taken: 0.132 seconds, Fetched: 2 row(s)
+hive> cd carl;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:                                                                                        1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20                                                                                        4)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2                                                                                        33)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821                                                                                        )
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.                                                                                        java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces                                                                                        sorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'cd' 'carl' '<EOF>'
+hive> use carl;
+OK
+Time taken: 0.026 seconds
+hive> show tables;
+OK
+Time taken: 0.028 seconds
+hive> create table demo1 (id int, name string);
+OK
+Time taken: 0.405 seconds
+hive> show tables
+    > ;
+OK
+demo1
+Time taken: 0.016 seconds, Fetched: 1 row(s)
+hive> select * from demo1;
+OK
+Time taken: 1.714 seconds
+hive> alter table demo 1 add columns (other_name STRING);
+NoViableAltException(340@[213:1: tableName : (db= identifier DOT tab= identifier -> ^( TOK_TABNAME $db $tab) |tab= identifier -> ^( TOK_TABNAME $tab) );])
+        at org.antlr.runtime.DFA.noViableAlt(DFA.java:158)
+        at org.antlr.runtime.DFA.predict(DFA.java:116)
+        at org.apache.hadoop.hive.ql.parse.HiveParser_FromClauseParser.tableName(HiveParser_FromClauseParser.java:5041)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.tableName(HiveParser.java:41936)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.alterStatement(HiveParser.java:8008)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.ddlStatement(HiveParser.java:3850)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.execStatement(HiveParser.java:2382)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1333)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:17 cannot recognize input near 'demo' '1' 'add' in table name
+hive> alter table demo1 add columns (other_name STRING);
+OK
+Time taken: 0.143 seconds
+hive> describe demo1;
+OK
+id                      int
+name                    string
+other_name              string
+Time taken: 0.042 seconds, Fetched: 3 row(s)
+hive> describe formatted demo1;
+OK
+# col_name              data_type               comment
+
+id                      int
+name                    string
+other_name              string
+
+# Detailed Table Information
+Database:               carl
+Owner:                  hadoop
+CreateTime:             Tue Sep 05 20:25:52 UTC 2017
+LastAccessTime:         UNKNOWN
+Retention:              0
+Location:               hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/carl.db/demo1
+Table Type:             MANAGED_TABLE
+Table Parameters:
+        COLUMN_STATS_ACCURATE   {\"BASIC_STATS\":\"true\"}
+        last_modified_by        hadoop
+        last_modified_time      1504643248
+        numFiles                0
+        numRows                 0
+        rawDataSize             0
+        totalSize               0
+        transient_lastDdlTime   1504643248
+
+# Storage Information
+SerDe Library:          org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+InputFormat:            org.apache.hadoop.mapred.TextInputFormat
+OutputFormat:           org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+Compressed:             No
+Num Buckets:            -1
+Bucket Columns:         []
+Sort Columns:           []
+Storage Desc Params:
+        serialization.format    1
+Time taken: 0.084 seconds, Fetched: 34 row(s)
+hive> hive> describe demo1;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'hive' '>' 'describe'
+hive> OK
+    > id                      int
+    > name                    string
+    > other_name              string
+    > Time taken: 0.042 seconds, Fetched: 3 row(s)
+    > hive> describe formatted demo1;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'OK' 'id' 'int'
+hive> OK
+    > # col_name              data_type               comment
+    >
+    > id                      int
+    > name                    string
+    > other_name              string
+    >
+    > # Detailed Table Information
+    > Database:               carl
+    > Owner:                  hadoop
+    > CreateTime:             Tue Sep 05 20:25:52 UTC 2017
+    > LastAccessTime:         UNKNOWN
+    > Retention:              0
+    > Location:               hdfs://ip-172-31-2-15.ec2.internal:8020/user/hive/warehouse/carl.db/demo1
+    > Table Type:             MANAGED_TABLE
+    > Table Parameters:
+    >         COLUMN_STATS_ACCURATE   {\"BASIC_STATS\":\"true\"}
+    >         last_modified_by        hadoop
+    >         last_modified_time      1504643248
+    >         numFiles                0
+    >         numRows                 0
+    >         rawDataSize             0
+    >         totalSize               0
+    >         transient_lastDdlTime   1504643248
+    >
+    > # Storage Information
+    > SerDe Library:          org.apache.hadoop.hive.serde2.lazy.LazySimpleSerDe
+    > InputFormat:            org.apache.hadoop.mapred.TextInputFormat
+    > OutputFormat:           org.apache.hadoop.hive.ql.io.HiveIgnoreKeyTextOutputFormat
+    > Compressed:             No
+    > Num Buckets:            -1
+    > Bucket Columns:         []
+    > Sort Columns:           []
+    > Storage Desc Params:
+    >         serialization.format    1
+    > Time taken: 0.084 seconds, Fetched: 34 row(s)
+    > hive>
+    > hive>
+    > dfs -ls /data/shakespeare/input
+    > Display all 574 possibilities? (y or n)
+    > dfs -ls /data/shakespeare/input;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'OK' 'col_name' 'data_type'
+hive> Display all 574 possibilities? (y or n)
+hive> count(*) from demo1;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'count' '(' '*'
+hive> select count(*) from demo1;
+OK
+0
+Time taken: 0.422 seconds, Fetched: 1 row(s)
+hive>
+
+login as: hadoop
+Authenticating with public key "imported-openssh-key"
+Last login: Tue Sep  5 20:34:12 2017
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2017.03-release-notes/
+9 package(s) needed for security, out of 13 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+[hadoop@ip-172-31-2-15 ~]$ /mnt/sparkclass/exercises/hive-tables1
+-bash: /mnt/sparkclass/exercises/hive-tables1: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ cd /mnt/sparkclass/exercises/hive-tables1
+-bash: cd: /mnt/sparkclass/exercises/hive-tables1: No such file or directory
+[hadoop@ip-172-31-2-15 ~]$ hive
+^[[A
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: true
+^[[A^[
+    > ;
+hive> cd /mnt/sparkcass/exercises/hive-tables1
+    > ;
+NoViableAltException(24@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1300)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'cd' '/' 'mnt'
+hive> dfs -get /data/shaespeare_wc/input/word_count.txt
+    >
+    > ;
+get: `/data/shaespeare_wc/input/word_count.txt': No such file or directory
+Command -get /data/shaespeare_wc/input/word_count.txt failed with exit code = 1
+Query returned non-zero code: 1, cause: null
+hive> dfs -get /data/shaespeare_wc/input/word_count.txt ./word_count.txt'
+    > ! ls;
+get: `ls;': No such file or directory
+Command -get /data/shaespeare_wc/input/word_count.txt ./word_count.txt'
+! ls; failed with exit code = 1
+Query returned non-zero code: 1, cause: null
+hive> ! more word_count.txt;
+
+login as: hadoop
+Authenticating with public key "imported-openssh-key"
+Last login: Tue Sep  5 20:34:45 2017 from 66-193-249-10.static.twtelecom.net
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2017.03-release-notes/
+9 package(s) needed for security, out of 13 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+[hadoop@ip-172-31-2-15 ~]$ hive
+load data local inpath './word_c
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.                                                                                        properties Async: true
+ount.txt' into hive> load data local inpath './word_count.txt' into table shakes                                                                                        peare_wc;
+FAILED: SemanticException [Error 10001]: Line 1:53 Table not found 'shakespeare_                                                                                        wc'
+hive> create table if not exists shakespeare_wc ( word string, count INT
+    > dfw -ls /user/hive/warehouse;
+MismatchedTokenException(24!=347)
+        at org.antlr.runtime.BaseRecognizer.recoverFromMismatchedToken(BaseRecognizer.java:617)
+        at org.antlr.runtime.BaseRecognizer.match(BaseRecognizer.java:115)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.createTableStatement(HiveParser.java:6179)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.ddlStatement(HiveParser.java:3808)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.execStatement(HiveParser.java:2382)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:1333)
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:204)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:233)
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821)
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 2:0 mismatched input 'dfw' expecting ) near 'INT' in create table statement
+hive> dfs -put ./word_count.txt /user/hive/warehouse/shakespeare_wc/wc2.txt;
+put: `/user/hive/warehouse/shakespeare_wc/wc2.txt': No such file or directory
+Command -put ./word_count.txt /user/hive/warehouse/shakespeare_wc/wc2.txt failed with exit code = 1
+Query returned non-zero code: 1, cause: null
+hive> dfs -get /data/shakespeare_wc/input/word_count.txt wc3.txt;
+hive> ! ls -l;
+total 696
+-rw-rw-r-- 1 hadoop hadoop   3085 Sep  5 11:58 biganalyses_example.R
+-rw-rw-r-- 1 hadoop hadoop   1015 Sep  5 11:58 change_pw.R
+-rw-rw-r-- 1 hadoop hadoop   1237 Sep  5 11:58 rmr2_example.R
+-rw-r--r-- 1 hadoop hadoop 699597 Sep  5 20:44 wc3.txt
+hive>
+
+
+login as: hadoop
+Authenticating with public key "imported-openssh-key"
+Last login: Tue Sep  5 20:34:45 2017 from 66-193-249-10.static.twtelecom.net
+
+       __|  __|_  )
+       _|  (     /   Amazon Linux AMI
+      ___|\___|___|
+
+https://aws.amazon.com/amazon-linux-ami/2017.03-release-notes/
+9 package(s) needed for security, out of 13 available
+Run "sudo yum update" to apply all updates.
+
+EEEEEEEEEEEEEEEEEEEE MMMMMMMM           MMMMMMMM RRRRRRRRRRRRRRR
+E::::::::::::::::::E M:::::::M         M:::::::M R::::::::::::::R
+EE:::::EEEEEEEEE:::E M::::::::M       M::::::::M R:::::RRRRRR:::::R
+  E::::E       EEEEE M:::::::::M     M:::::::::M RR::::R      R::::R
+  E::::E             M::::::M:::M   M:::M::::::M   R:::R      R::::R
+  E:::::EEEEEEEEEE   M:::::M M:::M M:::M M:::::M   R:::RRRRRR:::::R
+  E::::::::::::::E   M:::::M  M:::M:::M  M:::::M   R:::::::::::RR
+  E:::::EEEEEEEEEE   M:::::M   M:::::M   M:::::M   R:::RRRRRR::::R
+  E::::E             M:::::M    M:::M    M:::::M   R:::R      R::::R
+  E::::E       EEEEE M:::::M     MMM     M:::::M   R:::R      R::::R
+EE:::::EEEEEEEE::::E M:::::M             M:::::M   R:::R      R::::R
+E::::::::::::::::::E M:::::M             M:::::M RR::::R      R::::R
+EEEEEEEEEEEEEEEEEEEE MMMMMMM             MMMMMMM RRRRRRR      RRRRRR
+
+[hadoop@ip-172-31-2-15 ~]$ hive
+load data local inpath './word_c
+Logging initialized using configuration in file:/etc/hive/conf.dist/hive-log4j2.properties Async: true
+ount.txt' into hive> load data local inpath './word_count.txt' into table shakespeare_wc;
+FAILED: SemanticException [Error 10001]: Line 1:53 Table not found 'shakespeare_wc'
+hive> create table if not exists shakespeare_wc ( word string, count INT
+    > dfw -ls /user/hive/warehouse;
+MismatchedTokenException(24!=347)
+        at org.antlr.runtime.BaseRecognizer.recoverFromMismatchedToken(BaseRecog
+        at org.antlr.runtime.BaseRecognizer.match(BaseRecognizer.java:115)
+        at org.apache.hadoop.hive.ql.parse.HiveParser.createTableStatement(HiveP
+        at org.apache.hadoop.hive.ql.parse.HiveParser.ddlStatement(HiveParser.ja
+        at org.apache.hadoop.hive.ql.parse.HiveParser.execStatement(HiveParser.j
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 2:0 mismatched input 'dfw' expecting ) near 'INT' in
+hive> dfs -put ./word_count.txt /user/hive/warehouse/shakespeare_wc/wc2.txt;
+put: `/user/hive/warehouse/shakespeare_wc/wc2.txt': No such file or directory
+Command -put ./word_count.txt /user/hive/warehouse/shakespeare_wc/wc2.txt failed
+Query returned non-zero code: 1, cause: null
+hive> dfs -get /data/shakespeare_wc/input/word_count.txt wc3.txt;
+hive> ! ls -l;
+total 696
+-rw-rw-r-- 1 hadoop hadoop   3085 Sep  5 11:58 biganalyses_example.R
+-rw-rw-r-- 1 hadoop hadoop   1015 Sep  5 11:58 change_pw.R
+-rw-rw-r-- 1 hadoop hadoop   1237 Sep  5 11:58 rmr2_example.R
+-rw-r--r-- 1 hadoop hadoop 699597 Sep  5 20:44 wc3.txt
+hive> more tables.hql
+    > ;
+NoViableAltException(187@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near 'more' 'tables' '.'
+hive> /mnt/sparkclass/exercises/hive-tables1
+    > ;
+NoViableAltException(14@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near '/' 'mnt' '/'
+hive> Display all 574 possibilities? (y or n)
+!                         !=                        $ELEM$                    $K
+$key$                     $sum0                     $value$                   %
+)                         );                        *                         +
+.                         /                         :                         <
+<>                        =                         ==                        >
+ADD                       ALL                       ALTER                     AN
+ASC                       BIGINT                    BINARY                    BO
+BY                        CAST                      CLUSTER                   CL
+COMMENT                   COMPACT                   COMPACTIONS               CO
+DATE                      DATETIME                  DEFINED                   DE
+DIRECTORY                 DISABLE                   DISTINCT                  DI
+ENABLE                    EXCEPT                    EXPLAIN                   EX
+FIELDS                    FLOAT                     FOREIGN                   FO
+FUNCTION                  GROUP                     INPATH                    IN
+INTERSECT                 INTO                      IS                        IT
+KEYS                      LAST                      LEFT                      LI
+LOAD                      LOCAL                     LOCATION                  MA
+NORELY                    NOT                       NOVALIDATE                NU
+OFFSET                    ON                        OR                        OR
+OUTPUTFORMAT              OVERWRITE                 PARTITION                 PA
+PRIMARY                   PURGE                     REDUCE                    RE
+RENAME                    REPLACE                   REWRITE                   RI
+SELECT                    SEQUENCEFILE              SERDE                     SE
+SMALLINT                  SORT                      SORTED                    ST
+TABLE                     TABLES                    TABLESAMPLE               TB
+TEXTFILE                  TIMESTAMP                 TINYINT                   TO
+TRUE                      UNION                     UPDATE                    US
+WAIT                      WHERE                     WITH                      [
+^                         abort                     abs(                      ac
+aes_decrypt(              aes_encrypt(              all                       al
+array                     array(                    array_contains(           as
+asin(                     assert_true(              atan(                     av
+bigint                    bigint(                   bin(                      bi
+boolean                   boolean(                  bround(                   bu
+cardinality_violation(    case(                     cast                      cb
+char(                     char_length(              character_length(         ch
+coalesce(                 collect_list(             collect_set(              co
+compact                   compactions               compute_stats(            co
+context_ngrams(           conv(                     corr(                     co
+covar_samp(               crc32                     create                    cr
+current_date(             current_timestamp(        current_user(             da
+date_add(                 date_format(              date_sub(                 da
+dayofmonth(               dayofweek(                decimal(                  de
+delimited                 dense_rank(               desc                      de
+distinct                  distribute                div(                      do
+e(                        elt(                      enable                    en
+ewah_bitmap_empty(        ewah_bitmap_or(           except                    ex
+extended                  external                  extract_union(            fa
+fields                    find_in_set(              first_value(              fl
+floor_day(                floor_hour(               floor_minute(             fl
+floor_week(               floor_year(               foreign                   fo
+from_unixtime(            from_utc_timestamp(       full                      fu
+greatest(                 group                     grouping(                 ha
+hour(                     if(                       in(                       in
+initcap(                  inline(                   inpath                    in
+int                       int(                      internal_interval(        in
+into                      is                        isnotnull(                is
+join                      json_tuple(               key                       ke
+last_day(                 last_value(               lcase(                    le
+length(                   levenshtein(              like                      li
+ln(                       load                      local                     lo
+log10                     log2                      logged_in_user(           lo
+map                       map(                      map_keys(                 ma
+mask_hash(                mask_last_n(              mask_show_first_n(        ma
+md5                       min(                      minute(                   mo
+msck                      named_struct(             negative(                 ne
+noop(                     noopstreaming(            noopwithmap(              no
+not(                      novalidate                ntile(                    nu
+nvl(                      octet_length(             of                        of
+or(                       order                     out                       ou
+parse_url(                parse_url_tuple(          partition                 pa
+percentile(               percentile_approx(        pi(                       pm
+pow(                      power(                    precision                 pr
+quarter(                  radians(                  rand(                     ra
+reflect(                  reflect2                  regexp                    re
+regr_avgx(                regr_avgy(                regr_count(               re
+regr_sxx(                 regr_sxy(                 regr_syy(                 re
+replace                   replace(                  replicate_rows(           re
+rlike                     rlike(                    round(                    ro
+rtrim(                    second(                   select                    se
+serdeproperties           set                       sha(                      sh
+shiftright(               shiftrightunsigned(       show                      si
+smallint                  smallint(                 sort                      so
+soundex(                  space(                    split(                    sq
+std(                      stddev(                   stddev_pop(               st
+string                    string(                   struct(                   su
+substring_index(          sum(                      table                     ta
+tblproperties             temporary                 terminated                te
+tinyint                   tinyint(                  to                        to
+transactions              transform                 translate(                tr
+ucase(                    unbase64                  unhex(                    un
+upper(                    using                     uuid(                     va
+var_samp(                 varchar(                  variance(                 ve
+when(                     where                     windowingtablefunction(   wi
+xpath_double(             xpath_float(              xpath_int(                xp
+xpath_string(             year(                     |                         ~
+hive>
+    > ;
+hive> /mnt/sparkclass/exercises/hive-tables1;
+NoViableAltException(14@[])
+        at org.apache.hadoop.hive.ql.parse.HiveParser.statement(HiveParser.java:
+        at org.apache.hadoop.hive.ql.parse.ParseDriver.parse(ParseDriver.java:20
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:77)
+        at org.apache.hadoop.hive.ql.parse.ParseUtils.parse(ParseUtils.java:70)
+        at org.apache.hadoop.hive.ql.Driver.compile(Driver.java:468)
+        at org.apache.hadoop.hive.ql.Driver.compileInternal(Driver.java:1316)
+        at org.apache.hadoop.hive.ql.Driver.runInternal(Driver.java:1456)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1236)
+        at org.apache.hadoop.hive.ql.Driver.run(Driver.java:1226)
+        at org.apache.hadoop.hive.cli.CliDriver.processLocalCmd(CliDriver.java:2
+        at org.apache.hadoop.hive.cli.CliDriver.processCmd(CliDriver.java:184)
+        at org.apache.hadoop.hive.cli.CliDriver.processLine(CliDriver.java:403)
+        at org.apache.hadoop.hive.cli.CliDriver.executeDriver(CliDriver.java:821
+        at org.apache.hadoop.hive.cli.CliDriver.run(CliDriver.java:759)
+        at org.apache.hadoop.hive.cli.CliDriver.main(CliDriver.java:686)
+        at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+        at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.
+        at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAcces
+        at java.lang.reflect.Method.invoke(Method.java:498)
+        at org.apache.hadoop.util.RunJar.run(RunJar.java:221)
+        at org.apache.hadoop.util.RunJar.main(RunJar.java:136)
+FAILED: ParseException line 1:0 cannot recognize input near '/' 'mnt' '/'
+hive> cd hive-tables1
+    >
