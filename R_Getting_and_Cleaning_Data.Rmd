@@ -546,16 +546,145 @@ install.packages("RMySQL")
 
 ### Install RMySQL
 
+install.packages("RMySQL")
+library("RMySQL")
+
 1. On Windows: vanderbilt.edu
 2. Official instructions: biostat.mc.vanderbilt.edu
 3. ahschuls.de/2013/07...
 
+#### UCSC MySQL
 
+- Database for UCSC genomics lab
 
+#### Connecting and listing databases
 
+- You can apply a query to the database using the MySQL
+- Go to the connection ucsbDb, and then run a MySQL command
+- Ensure you disconnect from the server afterwards
+```{r}
+ucscDb <- dbConnect (MySQL(), user="genome",
+                     host="genome-mysql.cse.ucsc.edu")
 
+result <- dbGetQuery(ucscDb, "show databases;"); dbDisconnect(ucscDb);
+```
+- Check results for a list of all the databases
+
+```{r}
+result
+```
+
+#### Connecting to hg19 and listing tables
+- HG19 is a specific build of the human genome
+- See what tables are in that database
+- Check the length of the tables
+
+```{r}
+hg19 <- dbConnect(MySQL(),user="genome", db="hg19",host="genome-mysql.cse.ucsc.edu")
+allTables <-dbListTables(hg19)
+length(allTables)
+```
+
+- Let's list the first 5 tables
+```{r}
+allTables[1:5]
+```
+
+#### Get dimensions of a specific table
+- The affyU133Plus2 table is a type of micro array, which is used to measure something about the genome
+- Connect to the hg19 database and pull out the fields in that table
+```{r}
+dbListFields(hg19,"affyU133Plus2")
+```
+
+- Let's look at how many records there are
+```{r}
+dbGetQuery(hg19,"
+Select
+  count(*) as count
+from affyU133Plus2
+           ")
+```
+
+#### Read from the table
+- Pull data from the table and store it as a dataframe in local
+```{r}
+affyData <- dbReadTable(hg19,"affyU133Plus2")
+head(affyData)
+```
+
+#### Selec a specific subset
+- Sometimes the data may be too large to bring into R, so you may consider selecting a subset of the data
+- Fetch returns the results of the query
+
+```{r}
+query <- dbSendQuery(hg19, "
+select * 
+from affyU133Plus2
+  where misMatches between 1 and 3
+")
+
+affyMis <- fetch(query); quantile(affyMis$misMatches)
+```
+
+- You can fetch a small amount of data and check some of the fields
+- You can modify the  fetch command to bring in a few records
+- Make sure you clear the old query using the dbClearResult(query)
+
+```{r}
+affyMisSmall <- fetch(query, n=10);dbClearResult(query)
+```
+
+```{r}
+dim(affyMisSmall)
+```
+- Note that the above dataframe only has 10 rows and 22 dimensions/features
+
+#### Don't forget to close the connection!
+
+```{r}
+dbDisconnect(hg19)
+```
+#### Further resources
+- RMySQL vignette (http://cran.r-project.org/web/packages/RMySQL/RMySQL.pdf)
+- Do not access that server to remove things
 
 ## Reading from HDFS
+
+### HDF5
+- Used for storing large data sets
+
+### R HDF5 Package
+
+```{r}
+source("http://bioconductor.org/biocLite.R")
+biocLite("rhdf5")
+```
+
+```{r}
+library(rhdf5)
+created = h5createFile("example.h5")
+created
+```
+### Create groups
+
+```{r}
+created = h5createGroup("example.h5","foo")
+created = h5createGroup("example.h5","baa")
+created = h5createGroup("example.h5","foo.foobaa")
+h5ls("example.h5")
+```
+- Notice he name of the files of the groups we created
+
+### Write to groups
+
+```{r}
+A = matrix(1:10, nr=5,nc=2)
+h5write(A,"example.h5","foo/A")
+B = array(`)
+
+```
+
 ## Reading from the Web
 ## Reading from API
 ## Reading from other sources
