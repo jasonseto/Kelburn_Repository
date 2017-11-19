@@ -1,0 +1,144 @@
+---
+title: "Probability Distributions - R Tutorial"
+date: November 18, 2017
+author: Jason Seto
+output:
+  html_notebook:
+    theme: united
+    toc: yes
+    toc_float: yes
+  html_document:
+    toc: yes
+---
+
+# Binomial Distributions
+
+Link: http://www.r-tutor.com/elementary-statistics/probability-distributions/binomial-distribution
+
+## Overview
+
+> The binomial distribution is a discrete probability distribution. It describes the outcome of n independent trials in an experiment. Each trial is assumed to have only two outcomes, either success or failure. If the probability of a successful trial is p, then the probability of having x successful outcomes in an experiment of n independent trials is as follows.
+
+* Discrete probability distribution is used to describe binary outcomes based in independent trials
+
+## Problem
+
+> Suppose there are twelve multiple choice questions in an English class quiz. Each question has five possible answers, and only one of them is correct. Find the probability of having four or less correct answers if a student attempts to answer every question at random.
+
+* What is the probability of having 4 or less correct answers on 12 multiple choice questions where there are 5 possible answers for each question?
+
+## Solution
+
+* To find the probability of having EXACTLY 4 correct
+
+dbinom({Number of binary outcomes}, size = {number of tries}, prob={ probability of success each time})
+
+```{r}
+dbinom(4, size=12, prob=0.2)
+```
+
+* To find the probability of having 4 OR LESS orrect, you would add the successive probabilies of fewer successes
+
+```{r}
+dbinom(0, size=12, prob=0.2) +
+dbinom(1, size=12, prob=0.2) +
+dbinom(2, size=12, prob=0.2) +
+dbinom(3, size=12, prob=0.2) +
+dbinom(4, size=12, prob=0.2)
+```
+
+* The likelihood of getting 4 or less correct is 92.7%
+
+You can also leverage the cumulative probability function
+
+pbinom({probability that you have this number of successes or less}, size={number of tries}, prob={likely success at each try})
+
+```{r}
+pbinom(4,size=12,prob=.2)
+```
+* The likliehood of getting four or less correct is 92.7%
+
+# Chi-Squared Distribution
+
+Link: http://www.r-tutor.com/elementary-statistics/probability-distributions/chi-squared-distribution
+
+## Overview
+
+* Assume that you a few independent random variables having a standard normal distribution
+
+## Problem: Find the 95th percentile
+
+Find the 95th percentile of a chi-square distribution with7 degrees of freedom
+
+qchisq ({percentile searching for}, {degrees of freedom>})
+
+```{r}
+ qchisq(.95, df=7)
+```
+
+Link: https://www.r-bloggers.com/the-chi-squared-test-of-independence-an-example-in-both-r-and-sas/
+
+## The example: Gender and Ice Cream Flavour Preferences
+
+> In this example, we seek to determine whether or not there is an association between gender and preference for ice cream flavour...
+
+#### Preparing the dataset 
+
+{Row Name} = c({Column 1 Value, Column 2 Value, N})
+
+```{r}
+men = c(100, 120, 60)
+women = c(350, 200, 90)
+blah = c(50,100,74)
+
+men
+women
+blah
+```
+
+Combining the row vectors in matrices, then converting the matrix into a data frame
+
+{Name of the data frame} = as.dataframe(rbind{Row Name 1, Row Name 2, Row Name N})
+
+```{r}
+ice.cream.survey = as.data.frame(rbind(men, women, blah))
+
+ice.cream.survey
+```
+
+Naming the columns for the dataset by using the names and 'c' functions within R
+
+```{r}
+names(ice.cream.survey) = c('chocolate', 'vanilla', 'strawberry')
+
+ice.cream.survey
+```
+
+#### Chi-Square Test 
+
+chisq.test({Dataset with categorical variables })
+
+```{r}
+chisq.test(ice.cream.survey)
+```
+
+* Note a few things:
+    + Degrees of freedom = 4
+    + Very small P-Value
+    + Chi Square value = 88.258
+    
+#### Interpretation:
+
+* Probablities: The small P-Value suggests that gender and ice cream flavor preferences are dependent or have some association.
+* Practical interpretation: Evidence suggests that men, women, and blah have difference prferences for ice cream flabors
+
+# FAQ's
+
+### Deciding between a Chi-square and T-Test
+
+Link: https://biology.stackexchange.com/questions/13486/deciding-between-chi-square-and-t-test
+
+> t-test: Used when you are looking at the means of different populations. For example, you might want to determine whether the difference in the mean gene expression level between treated and untreated cells is different, or if the gene expression level of cells in a certain environment differs from what you would expect in a null hypothesis. Assumptions: You are assuming that the populations you are looking at are normally distributed. The variance of the populations is not known (that would be a Z-test), but it is assumed that the variance of each population is the same. Finally, for the t-test to work, the samples of the data from the two populations are assumed to be independent.
+
+> X^2 test: Several possibilities for this. The most common in biology is the Pearson χ2χ2 test, which is used when you are looking at categorical data, like the number of pea plants with white or purple flowers and round or wrinkled seeds, and trying to see whether the number of individuals in each category is consistent with some null hypothesis (such as the number in each category you'd expect if the genes for flower color and seed shape are not linked). Assumptions: The data points were randomly and independently gathered from the population, and you have a reasonably large number of samples.
+
