@@ -1,13 +1,14 @@
 ---
 title: "R Notebook - Getting and Cleaning Data"
-date: July 2017
-output: 
+author: "Jason Seto"
+date: "July 2017"
+output:
   html_notebook:
-    toc: TRUE
-    toc_float: TRUE
     theme: united
-author: Jason Seto
-
+    toc: yes
+    toc_float: yes
+  html_document:
+    toc: yes
 ---
 This notebook was created to work through the examples and problems for getting and cleaning data
 
@@ -653,6 +654,7 @@ dbDisconnect(hg19)
 
 ### HDF5
 - Used for storing large data sets
+- Data sets hae a range of information associated with it
 
 ### R HDF5 Package
 
@@ -660,6 +662,8 @@ dbDisconnect(hg19)
 source("http://bioconductor.org/biocLite.R")
 biocLite("rhdf5")
 ```
+
+
 
 ```{r}
 library(rhdf5)
@@ -671,7 +675,7 @@ created
 ```{r}
 created = h5createGroup("example.h5","foo")
 created = h5createGroup("example.h5","baa")
-created = h5createGroup("example.h5","foo.foobaa")
+created = h5createGroup("example.h5","foo/foobaa")
 h5ls("example.h5")
 ```
 - Notice he name of the files of the groups we created
@@ -681,11 +685,58 @@ h5ls("example.h5")
 ```{r}
 A = matrix(1:10, nr=5,nc=2)
 h5write(A,"example.h5","foo/A")
-B = array(`)
-
+B = array(seq(0.1,2.0,by=0.1),dim=c(5,2,2))
+attr(B,"scale") <- "liter"
+h5write(B,"example.h5","foo/foobaa/B")
+h5ls("example.h5")
 ```
 
+### Write a data set
+
+```{r}
+df = data.frame(1L:5L, seq(0,1,length.out=5),
+  c("ab","cde","fghi","a","s"), stringAsFactors=FALSE)
+h5write(df,"example.h5","df")
+h5ls("example.h5")
+```
+
+### Reading data
+
+* h5read tells hadoop to read a specific file
+* the second piece tells what specific dataset within the file
+* you can read dataset with a top leel group with just the dataset
+
+```{r}
+readA = h5read("example.h5","foo/A")
+readB = h5read("example.h5","foo/foobaa/B")
+readdf = h5read("example.h5","df")
+readA
+```
+
+### Writing and reading in chunks
+
+* You can also write and modify chunks of the dataset
+* The index '1:3' first three rows, and ',1' the first column
+* h5write(c(<Value_1>,<value_2>,<value_3>)),"example.h5"
+```{r}
+h5write(c(12,13,14),"example.h5","foo/A",index=list(1:3,1))
+h5read("example.h5","foo/A")
+```
+
+### Notes and further research
+
+* You can use hdf5 to write and optimize from disc in R
+* wwww.bioconducter.org
+* Search for hdf5
+
 ## Reading from the Web
+
+### Webscraping
+
+* Webscraping - Programmatically extracing data from the HTML code of website
+
+
+
 ## Reading from API
 ## Reading from other sources
 
