@@ -21,13 +21,13 @@ Link: http://www.r-tutor.com/elementary-statistics/probability-distributions/bin
 
 * Discrete probability distribution is used to describe binary outcomes based in independent trials
 
-## Problem
+### Problem
 
 > Suppose there are twelve multiple choice questions in an English class quiz. Each question has five possible answers, and only one of them is correct. Find the probability of having four or less correct answers if a student attempts to answer every question at random.
 
 * What is the probability of having 4 or less correct answers on 12 multiple choice questions where there are 5 possible answers for each question?
 
-## Solution
+#### Solution
 
 * To find the probability of having EXACTLY 4 correct
 
@@ -66,7 +66,7 @@ Link: http://www.r-tutor.com/elementary-statistics/probability-distributions/chi
 
 * Assume that you a few independent random variables having a standard normal distribution
 
-## Problem: Find the 95th percentile
+### Problem: Find the 95th percentile
 
 Find the 95th percentile of a chi-square distribution with7 degrees of freedom
 
@@ -76,9 +76,9 @@ qchisq ({percentile searching for}, {degrees of freedom>})
  qchisq(.95, df=7)
 ```
 
-Link: https://www.r-bloggers.com/the-chi-squared-test-of-independence-an-example-in-both-r-and-sas/
+### The example: Gender and Ice Cream Flavour Preferences
 
-## The example: Gender and Ice Cream Flavour Preferences
+Link: https://www.r-bloggers.com/the-chi-squared-test-of-independence-an-example-in-both-r-and-sas/
 
 > In this example, we seek to determine whether or not there is an association between gender and preference for ice cream flavour...
 
@@ -131,6 +131,10 @@ chisq.test(ice.cream.survey)
 
 * Probablities: The small P-Value suggests that gender and ice cream flavor preferences are dependent or have some association.
 * Practical interpretation: Evidence suggests that men, women, and blah have difference prferences for ice cream flabors
+
+# Student T Distribution
+
+> Assume that a random variable Z has the standard normal distribution, and another random variable V has the Chi-Squared distribution with m degrees of freedom. Assume further that Z and V are independent, then the following quantity follows a Student t distribution with m degrees of freedom.
 
 # FAQ's
 

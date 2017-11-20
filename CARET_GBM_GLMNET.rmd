@@ -1,0 +1,275 @@
+---
+title: "CARET_GBM_GLMNET"
+author: "Jason Seto"
+date: "11/18/2017"
+output:
+  html_notebook:
+    theme: united
+    toc: yes
+    toc_float: yes
+  html_document:
+    toc: yes
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Overview
+
+> This is an introduction to modeling binary outcomes using the caret library. A binary outcome is a result that has two possible values - true or false, alive or dead, etc.
+
+> We’re going to use two models: gbm (Generalized Boosted Models) and glmnet (Generalized Linear Models). Approaching a new data set using different models is one way of getting a handle on your data. Gbm uses boosted trees while glmnet uses regression. 
+
+Binary outcome models are particularly relevant for fraud and anomaly detection within Risk. For example: whether or not to approve a payment, whether to allow an appeasement, or whether to allow a trip to proceed.
+
+## Libraries
+
+* Caret library is an all purpose 
+* e1071 is a library used to evaluate results
+* pROC is used to print probabilities later on
+
+```{r}
+install.packages("caret")
+install.packages("e1071")
+install.packages("pROC")
+```
+
+```{r}
+library(caret)
+library(e1071)
+library(pROC)
+```
+
+
+
+Caret supports a wide variety of modeling techniques
+```{r}
+names(getModelInfo())
+```
+
+
+## Prepare dataset
+
+This data set uses the Titanic survivor set from the University of Colorado Denver. The data has information about the passengers aboard the Titanic, and whether or not they survived.
+
+#### Pull the Data
+```{r}
+titanicDF <- read.csv('http://math.ucdenver.edu/RTutorial/titanic.txt',sep='\t')
+print(str(titanicDF))
+```
+#### Clean the data
+
+The name variable is mostly unique, so we're go to extract the title and throw the rest away. (Personally, I think there are variables you can extract from the Mr, Mrs, etc. like marriage, gender preference if there is a difference )
+
+```{r}
+titanicDF$Title <- ifelse(grepl('Mr ',titanicDF$Name),'Mr',ifelse(grepl('Mrs ',titanicDF$Name),'Mrs',ifelse(grepl('Miss',titanicDF$Name),'Miss','Nothing'))) 
+```
+
+We are planning to run GLMNET and GBM to find the binary outcomes. However, the GLMNET cannot interpret the NA values, so instead, we must impute the missing values.
+
+Methods of imputing include:
+
+* Replacing median with NA
+* Replacing mean with NA
+
+```{r}
+median(titanicDF$Age, na.rm=T)
+```
+
+* Whenever the titfanicDF$Age is.na, then we apply the median value to that NA (28)
+* na.rm - whether or not the na values should be stripped before the computation process. Here we want to ignore the NA values when computing the median
+
+```{r}
+titanicDF$Age[is.na(titanicDF$Age)] <- median(titanicDF$Age, na.rm=T)
+```
+
+* Additionally, we want to have the outcome variable (Target Variable) as the last variable in the dataset
+* In this case, the target variable is survived
+
+```{r}
+titanicDF <- titanicDF[c('PClass', 'Age',    'Sex',   'Title', 'Survived')]
+print(str(titanicDF))
+```
+
+We also must adjust the factor variables since most models will only accept numeric data, we must 'dummify' thevariable accordingly. Basically, we have to take categorical data and split it into binaries in order to be interpreted 
+
+```{r}
+titanicDF$Title <- as.factor(titanicDF$Title)
+titanicDummy <- dummyVars("~.",data=titanicDF, fullRank=F)
+titanicDF <- as.data.frame(predict(titanicDummy,titanicDF))
+print(names(titanicDF))
+```
+
+* You can now see that each variable has been broken down into factors and categorical binaries for splitting
+
+
+```{r}
+prop.table(table(titanicDF$Survived))
+```
+
+34.27% of people in our data set survived in the Titantic tragedy. This is important step because if the proportion was smaller than 15%, it would be a rareevent and would be more challenging to model
+
+#### Badging the predictor output
+
+Changing the target variable to a generic name for generalizability and model build
+
+##### We want to identify the target variable in the titanic data set
+
+targetVaraible <- '{Target variabe name}'
+
+##### We want to identify all the non-target variables
+We want to label all the variables that will be used as predictors
+
+predictorsNames <- names({cleaned data frame})[names({cleaned data frame}) != targetVariable
+
+```{r}
+targetVariable <- 'Survived'
+
+predictorsNames <- names(titanicDF)[names(titanicDF) != targetVariable]
+
+targetVariable
+predictorsNames
+```
+
+## Model
+
+### GBM Modeling
+
+Link: https://cran.r-project.org/web/packages/caret/caret.pdf
+
+We can get more inormatino about the type of models that this particular package supports within caret. 
+
+GBM supports both regression and classification
+
+```{r}
+getModelInfo()$gbm$type
+```
+
+> Since we are running a binary classification, we need to force the model to run classification, we can acheive this by changing the outcome variable to a factor 
+
+```{r}
+titanicDF$Survived2 <- ifelse(titanicDF$Survived==1,'yes','nope')
+titanicDF$Survived2 <- as.factor(titanicDF$Survived2)
+outcomeName <- 'Survived2'
+```
+
+Here, we rebaged all the 1's to Yes, and the 0's to Nope
+
+> As with most modeling projects, we need to split our data into two portions: a training and a testing portion. By doing this, we can use one portion to teach the model how to recognize survivors on the Titanic and the other portion to evaluate the model. Setting the seed is paramount for reproducibility as createDataPartition will shuffle the data randomly before splitting it. By using the same seed you will always get the same split in subsequent runs
+
+
+
+```{r}
+set.seed(1234)
+splitIndex <- createDataPartition(titanicDF[,outcomeName], p = .75, list = FALSE, times = 1)
+trainDF <- titanicDF[ splitIndex,]
+testDF  <- titanicDF[-splitIndex,]
+```
+
+* Here we partition at 75% and 25%
+
+> Caret offers many tuning functions to help you get as much as possible out of your models; the trainControl function allows you to control the resampling of your data. This will split the training data set internally and do it’s own train/test runs to figure out the best settings for your model. In this case, we’re going to cross-validate the data 3 times, therefore training it 3 times on different portions of the data before settling on the best tuning parameters (for gbm it is trees, shrinkage, and interaction depth). You can also set these values yourself if you don’t trust the function.
+
+
+GBM has three key tuning parameters:
+
+* Number of boosting interations (n.trees, numeric)
+* Max tree depth (interaction.depth, numeric)
+* Shrinkage (shrinkage, numeric)
+* Min. Terminal Node Size (nminobsinnode, numeric)
+
+```{r}
+objControl <- trainControl(method='cv', number=3, returnResamp='none', summaryFunction = twoClassSummary, classProbs = TRUE)
+```
+
+> This is the heart of our modeling adventure, time to teach our model how to recognize Titanic survivors. Because this is a classification model, we’re requesting that our metrics use ROC instead of the default RMSE:
+
+?train
+
+```{r}
+objModel <- train(trainDF[,predictorsNames], trainDF[,outcomeName], 
+                  method='gbm', 
+                  trControl=objControl,
+                  metric = "ROC",
+                  maximize = TRUE,
+                  preProc = c("center", "scale"))
+```
+
+We can leverage the summary function on the model to determine which variables were of most importance.
+
+```{r}
+summary(objModel)
+```
+
+We can find out which parameters were most important to the model by printing
+
+Note:
+
+* shrinkage - held at 0.1
+* ROC was used to select largest values
+* N.trees = 100
+* interaction.depth = 1
+
+```{r}
+plot(objModel)
+```
+
+
+```{r}
+print(objModel)
+```
+
+You can check for variable importance using the varImp command
+
+```{r}
+varImp(object=objModel)
+```
+
+Plot the variables on a line
+
+```{r}
+plot(varImp(object=objModel),main="GBM - Variable Importance")
+```
+
+
+#### Evaluate GBM Model
+
+> There are two types of evaluation we can do here, raw or prob. Raw gives you a class prediction, in our case yes and nope, while prob gives you the probability on how sure the model is about it’s choice. I always use prob, as I like to be in control of the threshold and also like to use AUC score which requires probabilities, not classes. There are situations where having class values can come in handy, such as with multinomial models where you’re predicting more than two values.
+
+> We now call the predict function and pass it our trained model and our testing data. Let’s start by looking at class predictions and using the caret postResample function to get an accuracy score:
+
+predict(object={model_name}, {Test data set}[,predictorsNames], type = '{raw or prob}')
+
+```{r}
+predictions <- predict(object=objModel, testDF[,predictorsNames], type='raw')
+
+head(predictions)
+```
+
+```{r}
+print(postResample(pred=predictions, obs=as.factor(testDF[,outcomeName])))
+```
+
+This tells us that our model accuracy is 81.35%. If we were to sample randomly, we would only get 34.27%. Not bad!
+
+```{r}
+predictions <- predict(object=objModel, testDF[,predictorsNames], type='prob')
+head(predictions)
+```
+
+AUC is commonly used to refer to AUROC (Area under the receiver operator characteristic)
+
+AUROC Interpretation
+
+Link: https://stats.stackexchange.com/questions/132777/what-does-auc-stand-for-and-what-is-it
+
+> The AUC of a classifier is equal to the probability that the classifier will rank a randomly chosen positive example higher than a randomly chosen negative example
+
+> The AUC ranges from .5 to 1, with .5 being a random draw, and 1 being a perfect model
+
+```{r}
+auc <- roc(ifelse(testDF[,outcomeName]=="yes",1,0), predictions[[2]])
+print(auc$auc)
+```
+
